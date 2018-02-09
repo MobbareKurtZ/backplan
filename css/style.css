@@ -261,16 +261,16 @@
         display: grid;
         background-image: url('test.jpg');
         background-size: cover;
-        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 50px;
         grid-template-columns: repeat(5, 1fr);
         grid-template-areas: 
         "scrb scrb scrb scrb scrb"
-        ". . . . ."
-        ". . . . ."
-        ". . . . ."
-        ". . . . ."
-        ". . . . ."
-        ". . . . ."
+        "lst lst lst lst lst"
+        "lst lst lst lst lst"
+        "lst lst lst lst lst"
+        "lst lst lst lst lst"
+        "lst lst lst lst lst"
+        "pnav pnav pnav pnav pnav"
     }
     #main_pl input[type="text"] {
         grid-area: scrb;
@@ -280,6 +280,13 @@
         background-image: url('../img/search.png');
         background-repeat: no-repeat;
         background-position: 100% 100%;
+    }
+    .list {
+        grid-area: lst;
+    }
+    .plannav {
+        grid-area: pnav;
+        background-color: #EF7B45;
     }
     h1 {
         font-family: 'Raleway', sans-serif;

@@ -13,7 +13,7 @@
 }(jQuery));
 
 $(document).ready(function() {
-    $('.navLogin').css({'display':'none'});
+    $('.navLogin').css({ 'display': 'none' });
     $('.menuic').clickToggle(function() {
             $('#navbar').animate({
                 top: "0px"
@@ -26,10 +26,10 @@ $(document).ready(function() {
                 top: "-270px"
             }, 400);
             $('.menuic').toggleClass('rotate');
-            $('.bluroverlay').removeClass('bluroverlayActive');
+            $('.bluroverlay').toggleClass('bluroverlayActive');
         });
-        $('.navbtn1').clickToggle(function() {
-            $('.navLogin').css({'display':'grid'});
-            $('.navbtns').css({'display':'none'});
-        });
+    $('.navbtn1').clickToggle(function() {
+        $('.navLogin').css({ 'display': 'grid' });
+        $('.navbtns').css({ 'display': 'none' });
+    });
 });

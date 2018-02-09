@@ -96,9 +96,9 @@
         justify-content: center;
         text-align: center;
         grid-template-columns: repeat(5, 1fr);
-        grid-template-areas: ". nb1 nb2 acic ."
+        grid-template-areas: ". nb1 nb2 acic .";
     }
-    input[type="text"] {
+    header input[type="text"] {
         font-size: 16px;
         padding: 6px 10px;
         margin: 8px 0;
@@ -106,7 +106,7 @@
         height: 100%;
         font-family: 'Roboto', sans-serif;
     }
-    input[type="password"] {
+    header input[type="password"] {
         font-size: 16px;
         padding: 6px 10px;
         margin: 3px 0;
@@ -114,7 +114,7 @@
         height: 100%;
         font-family: 'Roboto', sans-serif;
     }
-    input[type="submit"] {
+    header input[type="submit"] {
         border: none;
         text-decoration: none;
         font-size: 20px;
@@ -263,7 +263,23 @@
         background-size: cover;
         grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
         grid-template-columns: repeat(5, 1fr);
-        grid-template-areas: ". . . . ." ". . . . ." ". . . . ." ". . . . ." ". . . . ." ". . . . ." ". . . . ."
+        grid-template-areas: 
+        "scrb scrb scrb scrb scrb"
+        ". . . . ."
+        ". . . . ."
+        ". . . . ."
+        ". . . . ."
+        ". . . . ."
+        ". . . . ."
+    }
+    #main_pl input[type="text"] {
+        grid-area: scrb;
+        height: 40%;
+        padding: 10px;
+        font-size: 500%;
+        background-image: url('../img/search.png');
+        background-repeat: no-repeat;
+        background-position: 100% 100%;
     }
     h1 {
         font-family: 'Raleway', sans-serif;
@@ -289,6 +305,9 @@
         font-family: 'Roboto', sans-serif;
         color: #CDEDF6;
         font-size: 3em;
+    }
+    a {
+        text-decoration: none;
     }
 }
 

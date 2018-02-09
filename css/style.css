@@ -1,0 +1,363 @@
+body {
+    width: 360px;
+    max-width: 360px;
+    height: 640px;
+    max-height: 640px;
+    margin: 0px;
+    font-size: 30%;
+}
+
+#wrapper {
+    margin: 0px;
+    display: grid;
+    width: 360px;
+    max-width: 360px;
+    height: 640px;
+    max-height: 640px;
+    overflow: hidden;
+    grid-template-rows: 60px 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-areas: "nv nv nv nv nv" "mn mn mn mn mn" "mn mn mn mn mn" "mn mn mn mn mn" "mn mn mn mn mn" "mn mn mn mn mn" "mn mn mn mn mn" "mn mn mn mn mn"
+}
+
+.bg {
+    background-image: url('https://static.pexels.com/photos/450062/pexels-photo-450062.jpeg');
+    position: fixed;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center 10%;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    z-index: -100;
+}
+
+.gradient {
+    background: linear-gradient(to right, rgba(255, 0, 0, 0), rgba(4, 42, 43, 0.658));
+    width: 360px;
+    height: 100%;
+    overflow: hidden;
+    z-index: -90;
+    position: fixed;
+}
+
+.bluroverlayActive {
+    background-color: #020f0fdc;
+    content: “ ”;
+    width: 360px;
+    height: 100%;
+    overflow: hidden;
+    position: fixed;
+    z-index: 1;
+    transition: background-color 0.5s ease;
+}
+
+
+/* -----------NAVBAR----------- */
+
+#navbar {
+    width: 360px;
+    height: 340px;
+    grid-gap: 1px 0px;
+    z-index: 5;
+    grid-area: nv;
+    background-color: #042a2b;
+    top: -270px;
+    display: grid;
+    overflow: hidden;
+    position: fixed;
+    grid-template-rows: repeat(5, 1fr);
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-areas: 
+    "nt1 nt1 nt1 nt1 nt1"
+    "nt2 nt2 nt2 nt2 nt2"
+    "nt3 nt3 nt3 nt3 nt3"
+    "nbts nbts nbts nbts nbts"
+    "navm navm navm navm navm"
+}
+
+.navtxts {
+    margin-left: 10px;
+    color: #042a2b;
+}
+
+.navtxt1 {
+    grid-area: nt1;
+    background-color: #CDEDF6;
+}
+
+.navtxt2 {
+    grid-area: nt2;
+    background-color: #CDEDF6;
+}
+
+.navtxt3 {
+    grid-area: nt3;
+    background-color: #CDEDF6;
+}
+
+.navbtns {
+    grid-area: nbts;
+    background-color: #CDEDF6;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-areas: ". nb1 nb2 acic ."
+}
+
+.navLogin {
+    grid-area: nbts;
+    background-color: #CDEDF6;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-areas: ". nb1 nb2 acic ."
+}
+
+.input {
+    margin: 10px;
+}
+
+btntxt {
+    font-family: 'Roboto', sans-serif;
+    color: #383842;
+    margin: auto;
+}
+
+.navbtn1 {
+    grid-area: nb1;
+    background-color: #5EB1BF;
+    height: 60%;
+    display: block;
+    word-wrap: break-word;
+    margin: 0px 10px;
+    width: 80px;
+    border-radius: 3px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+}
+
+.navbtn2 {
+    grid-area: nb2;
+    background-color: #042a2b;
+    height: 60%;
+    display: block;
+    word-wrap: break-word;
+    margin: 0px 10px;
+    width: 110px;
+    border-radius: 3px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+}
+
+.accic {
+    grid-area: acic;
+    margin: 0px 20px;
+}
+
+.logtxt {
+    top: -10px;
+    color: #042a2b;
+    left: 12px;
+    position: relative;
+}
+
+.regtxt {
+    top: -10px;
+    left: 12px;
+    position: relative;
+}
+
+.navmenu {
+    grid-area: navm;
+    background-color: #042a2b;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-areas: "lg lg . . mic"
+}
+
+.logo {
+    grid-area: lg;
+    margin-left: 10px;
+}
+
+.menuic {
+    grid-area: mic;
+    cursor: pointer;
+    margin: auto;
+    transform: rotate(0deg);
+    transition: .5s cubic-bezier(.17, .67, .21, 1.69);
+    left: -50px;
+}
+
+.rotate {
+    transform: rotate(90deg);
+    transition: .5s cubic-bezier(.17, .67, .21, 1.69);
+}
+
+
+/* -----------MAIN----------- */
+
+#main_in {
+    grid-area: mn;
+    display: grid;
+    background-image: url('test.jpg');
+    background-size: cover;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-areas: ". . . . ." ". pb pb pb ." ". dbb . mb ." ". . . . ." ". . . txts txts" ". exp . . ." ". . . . ."
+}
+
+.planbox {
+    grid-area: pb;
+    background-color: #042a2b;
+    text-align: center;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.dbbox {
+    grid-area: dbb;
+    background-color: #042a2b;
+    text-align: center;
+    display: block;
+    border-radius: 10px;
+    margin: 10px 0px;
+    width: 120px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.matchbox {
+    grid-area: mb;
+    background-color: #042a2b;
+    text-align: center;
+    display: block;
+    border-radius: 10px;
+    margin: 10px 0px;
+    width: 120px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.texts {
+    grid-area: txts;
+    text-align: right;
+    margin-right: 40px;
+}
+
+.explbtn {
+    grid-area: exp;
+    background-color: #042a2b;
+    height: 40px;
+    width: 110px;
+    margin: -10px;
+    border-radius: 5px;
+    text-align: center;
+    position: relative;
+    bottom: -30px;
+}
+
+#expltxt {
+    bottom: 10px;
+    position: relative;
+}
+
+.button {
+    background-color: #5EB1BF;
+    height: 40px;
+    margin: -10px;
+    border-radius: 9px;
+    text-align: center;
+    position: relative;
+}
+
+h1 {
+    font-family: 'Raleway', sans-serif;
+    color: #CDEDF6;
+    font-size: 6em;
+}
+
+h2 {
+    font-family: 'Raleway', sans-serif;
+    color: #CDEDF6;
+    font-size: 5em;
+}
+
+h3 {
+    font-family: 'Roboto', sans-serif;
+    color: #CDEDF6;
+    font-size: 4em;
+}
+
+h4 {
+    font-family: 'Open Sans Condensed', sans-serif;
+    color: #CDEDF6;
+    font-size: 4em;
+}
+
+p {
+    font-family: 'Roboto', sans-serif;
+    color: #CDEDF6;
+    font-size: 3em;
+}
+
+
+/*font-family: 'Roboto', sans-serif;
+font-family: 'Raleway', sans-serif;
+font-family: 'Open Sans Condensed', sans-serif;*/
+
+.material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    /* Preferred icon size */
+    display: inline-block;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+    /* Support for all WebKit browsers. */
+    -webkit-font-smoothing: antialiased;
+    /* Support for Safari and Chrome. */
+    text-rendering: optimizeLegibility;
+    /* Support for Firefox. */
+    -moz-osx-font-smoothing: grayscale;
+    /* Support for IE. */
+    font-feature-settings: 'liga';
+}
+
+.material-icons.md-dark {
+    color: #042a2b;
+}
+
+.material-icons.md-dark.md-inactive {
+    color: rgba(0, 0, 0, 0.26);
+}
+
+.material-icons.md-light {
+    color: #CDEDF6;
+}
+
+.material-icons.md-light.md-inactive {
+    color: rgba(255, 255, 255, 0.3);
+}
+
+.material-icons.md-18 {
+    font-size: 18px;
+}
+
+.material-icons.md-24 {
+    font-size: 24px;
+}
+
+.material-icons.md-36 {
+    font-size: 36px;
+}
+
+.material-icons.md-48 {
+    font-size: 48px;
+}

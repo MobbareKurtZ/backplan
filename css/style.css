@@ -261,7 +261,7 @@
         display: grid;
         background-image: url('test.jpg');
         background-size: cover;
-        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 50px;
+        grid-template-rows: 10% 1fr 1fr 1fr 1fr 1fr 50px;
         grid-template-columns: repeat(5, 1fr);
         grid-template-areas: 
         "scrb scrb scrb scrb scrb"
@@ -274,7 +274,6 @@
     }
     #main_pl input[type="text"] {
         grid-area: scrb;
-        height: 40%;
         padding: 10px;
         font-size: 500%;
         background-image: url('../img/search.png');
@@ -282,43 +281,126 @@
         background-position: 100% 100%;
     }
     .list {
+        display:grid;
         grid-area: lst;
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: repeat(7, 1fr);
+        grid-template-areas: 
+        "l1 l1 l1 l1 l1"
+        "l2 l2 l2 l2 l2"
+        "l3 l3 l3 l3 l3"
+        "l4 l4 l4 l4 l4"
+        "l5 l5 l5 l5 l5"
+        "l6 l6 l6 l6 l6"
+        "l7 l7 l7 l7 l7"
+    }
+    .list h2 {
+        position: absolute;
+        right: 5%;
+        top: -15%;
+    }
+    .list h4 {
+        position: absolute;
+        right: 5%;
+        top: 15%;
+        font-family: 'Open Sans Condensed', sans-serif;
+    }
+    .list1 {
+        grid-area: l1;
+        position: relative;
+        background-repeat: no-repeat;
+        background: linear-gradient(to right, rgba(255, 0, 0, 0), rgba(4, 42, 43, 0.925), rgb(4, 42, 43)),
+        url('../img/iceland.jpeg') 40% 40% / 100% ;
+        width: 100%;
+        text-align: right;
+    }
+    .list2 {
+        grid-area: l2;
+        position: relative;
+        background-repeat: no-repeat;
+        background: linear-gradient(to right, rgba(255, 0, 0, 0), rgba(4, 42, 43, 0.925), rgb(4, 42, 43)),
+        url('../img/iceland.jpeg') 40% 40% / 100% ;
+        width: 100%;
+        text-align: right;
+    }
+    .list3 {
+        grid-area: l3;
+        position: relative;
+        background-repeat: no-repeat;
+        background: linear-gradient(to right, rgba(255, 0, 0, 0), rgba(4, 42, 43, 0.925), rgb(4, 42, 43)),
+        url('../img/iceland.jpeg') 40% 40% / 100% ;
+        width: 100%;
+        text-align: right;
+    }
+    .list4 {
+        grid-area: l4;
+        position: relative;
+        background-repeat: no-repeat;
+        background: linear-gradient(to right, rgba(255, 0, 0, 0), rgba(4, 42, 43, 0.925), rgb(4, 42, 43)),
+        url('../img/iceland.jpeg') 40% 40% / 100% ;
+        width: 100%;
+        text-align: right;
+    }
+    .list5 {
+        grid-area: l5;
+        position: relative;
+        background-repeat: no-repeat;
+        background: linear-gradient(to right, rgba(255, 0, 0, 0), rgba(4, 42, 43, 0.925), rgb(4, 42, 43)),
+        url('../img/iceland.jpeg') 40% 40% / 100% ;
+        width: 100%;
+        text-align: right;
+    }
+    .list6 {
+        grid-area: l6;
+        position: relative;
+        background-repeat: no-repeat;
+        background: linear-gradient(to right, rgba(255, 0, 0, 0), rgba(4, 42, 43, 0.925), rgb(4, 42, 43)),
+        url('../img/iceland.jpeg') 40% 40% / 100% ;
+        width: 100%;
+        text-align: right;
+    }
+    .list7 {
+        grid-area: l7;
+        position: relative;
+        background-repeat: no-repeat;
+        background: linear-gradient(to right, rgba(255, 0, 0, 0), rgba(4, 42, 43, 0.925), rgb(4, 42, 43)),
+        url('../img/iceland.jpeg') 40% 40% / 100% ;
+        width: 100%;
+        text-align: right;
     }
     .plannav {
         grid-area: pnav;
         background-color: #EF7B45;
     }
-    h1 {
-        font-family: 'Raleway', sans-serif;
-        color: #CDEDF6;
-        font-size: 6em;
-    }
-    h2 {
-        font-family: 'Raleway', sans-serif;
-        color: #CDEDF6;
-        font-size: 5em;
-    }
-    h3 {
-        font-family: 'Roboto', sans-serif;
-        color: #CDEDF6;
-        font-size: 4em;
-    }
-    h4 {
-        font-family: 'Open Sans Condensed', sans-serif;
-        color: #CDEDF6;
-        font-size: 4em;
-    }
-    p {
-        font-family: 'Roboto', sans-serif;
-        color: #CDEDF6;
-        font-size: 3em;
-    }
-    a {
-        text-decoration: none;
-    }
 }
-
-
+h1 {
+    font-family: 'Raleway', sans-serif;
+    color: #CDEDF6;
+    font-size: 6em;
+}
+h2 {
+    font-family: 'Raleway', sans-serif;
+    color: #CDEDF6;
+    font-size: 5em;
+}
+h3 {
+    font-family: 'Roboto', sans-serif;
+    color: #CDEDF6;
+    font-size: 4em;
+}
+h4 {
+    font-family: 'Open Sans Condensed', sans-serif;
+    color: #CDEDF6;
+    font-size: 4em;
+}
+p {
+    font-family: 'Roboto', sans-serif;
+    color: #CDEDF6;
+    font-size: 3em;
+}
+a {
+    text-decoration: none;
+}
 /*font-family: 'Roboto', sans-serif;
 font-family: 'Raleway', sans-serif;
 font-family: 'Open Sans Condensed', sans-serif;*/

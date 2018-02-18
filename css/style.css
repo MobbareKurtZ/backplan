@@ -215,13 +215,15 @@
         ". dbb . mb ."
         ". . . . ."
         ". . txts txts txts"
-        ". exp . . ." ". . . . ."
+        ". exp . . ."
+        ". . . . ."
     }
     .planbox {
         grid-area: pb;
         background-color: #042a2b;
         text-align: center;
         margin: 10%;
+        display: block;
         border-radius: 10px;
         height: 60%;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -232,7 +234,7 @@
         text-align: center;
         display: block;
         border-radius: 10px;
-        width: 20em;
+        width: 25em;
         height: 100%;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     }
@@ -242,7 +244,7 @@
         text-align: center;
         display: block;
         border-radius: 10px;
-        width: 20em;
+        width: 25em;
         height: 100%;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     }
@@ -279,9 +281,11 @@
     #main_pl {
         grid-area: mn;
         display: grid;
+        background-color: #042a2b;
         background-image: url('test.jpg');
         background-size: cover;
-        grid-template-rows: 10% 1fr 1fr 1fr 1fr 1fr 50px;
+        height: 100%;
+        grid-template-rows: 10% 1fr 1fr 1fr 1fr 1fr 30px;
         grid-template-columns: repeat(5, 1fr);
         grid-template-areas: 
         "scrb scrb scrb scrb scrb"
@@ -292,7 +296,7 @@
         "lst lst lst lst lst"
         "pnav pnav pnav pnav pnav"
     }
-    #main_pl input[type="text"] {
+    #main_pl input[placeholder="Sök destination..."] {
         grid-area: scrb;
         padding: 10px;
         font-size: 500%;
@@ -314,20 +318,44 @@
         "l6 l6 l6 l6 l6"
         "l7 l7 l7 l7 l7"
     }
+    .list i {
+        margin: 1%;
+    }
     .list h2 {
         position: absolute;
-        right: 5%;
-        top: -15%;
+        right: 20%;
+        top: 0%;
     }
-    .list h4 {
-        position: absolute;
-        right: 5%;
-        top: 15%;
-        font-family: 'Open Sans Condensed', sans-serif;
+    .start {
+        float: left;
+        top: 10%;
+        left: 2%;
+        position: relative;
+    }
+    .check {
+        float: left;
+        top: 10%;
+        left: 2%;
+        position: relative;
+    }
+    .fin {
+        float: left;
+        top: 10%;
+        left: 2%;
+        position: relative;
+    }
+    .front {
+        background-color: #042a2b;
+        border-radius: 10%;
+    }
+    .back {
+        background-color: #042a2b;
+        border-radius: 10%;
     }
     .list1 {
         grid-area: l1;
         position: relative;
+        margin: 0% 0% 0.5% 0%;
         background-repeat: no-repeat;
         background: linear-gradient(to right, rgba(255, 0, 0, 0), rgba(4, 42, 43, 0.925), rgb(4, 42, 43)),
         url('../img/iceland.jpeg') 40% 40% / 100% ;
@@ -337,60 +365,175 @@
     .list2 {
         grid-area: l2;
         position: relative;
+        margin: 0.5% 0%;
         background-repeat: no-repeat;
         background: linear-gradient(to right, rgba(255, 0, 0, 0), rgba(4, 42, 43, 0.925), rgb(4, 42, 43)),
-        url('../img/iceland.jpeg') 40% 40% / 100% ;
+        url('../img/china.jpeg') 100% 50% / 120% ;
         width: 100%;
         text-align: right;
     }
     .list3 {
         grid-area: l3;
         position: relative;
+        margin: 0.5% 0%;
         background-repeat: no-repeat;
         background: linear-gradient(to right, rgba(255, 0, 0, 0), rgba(4, 42, 43, 0.925), rgb(4, 42, 43)),
-        url('../img/iceland.jpeg') 40% 40% / 100% ;
+        url('../img/livigno.jpeg') 100% 50% / 200% ;
         width: 100%;
         text-align: right;
     }
     .list4 {
         grid-area: l4;
         position: relative;
+        margin: 0.5% 0%;
         background-repeat: no-repeat;
-        background: linear-gradient(to right, rgba(255, 0, 0, 0), rgba(4, 42, 43, 0.925), rgb(4, 42, 43)),
-        url('../img/iceland.jpeg') 40% 40% / 100% ;
+        background: linear-gradient(to right, rgba(255, 0, 0, 0), rgba(4, 42, 43, 0.925), rgb(4, 42, 43));
         width: 100%;
         text-align: right;
     }
     .list5 {
         grid-area: l5;
         position: relative;
+        margin: 0.5% 0%;
         background-repeat: no-repeat;
-        background: linear-gradient(to right, rgba(255, 0, 0, 0), rgba(4, 42, 43, 0.925), rgb(4, 42, 43)),
-        url('../img/iceland.jpeg') 40% 40% / 100% ;
+        background: linear-gradient(to right, rgba(255, 0, 0, 0), rgba(4, 42, 43, 0.925), rgb(4, 42, 43));
         width: 100%;
         text-align: right;
     }
     .list6 {
         grid-area: l6;
         position: relative;
+        margin: 0.5% 0%;
         background-repeat: no-repeat;
-        background: linear-gradient(to right, rgba(255, 0, 0, 0), rgba(4, 42, 43, 0.925), rgb(4, 42, 43)),
-        url('../img/iceland.jpeg') 40% 40% / 100% ;
+        background: linear-gradient(to right, rgba(255, 0, 0, 0), rgba(4, 42, 43, 0.925), rgb(4, 42, 43));
         width: 100%;
         text-align: right;
     }
     .list7 {
         grid-area: l7;
         position: relative;
+        margin: 0.5% 0%;
         background-repeat: no-repeat;
-        background: linear-gradient(to right, rgba(255, 0, 0, 0), rgba(4, 42, 43, 0.925), rgb(4, 42, 43)),
-        url('../img/iceland.jpeg') 40% 40% / 100% ;
+        background: linear-gradient(to right, rgba(255, 0, 0, 0), rgba(4, 42, 43, 0.925), rgb(4, 42, 43));
         width: 100%;
         text-align: right;
     }
     .plannav {
         grid-area: pnav;
-        background-color: #EF7B45;
+        background-color: #5EB1BF;
+        width: 100%;
+        z-index: 10;
+        height: 7%;        
+        position: fixed;
+        bottom: 0;
+        display: grid;
+        grid-template-columns: repeat(8, 1fr);
+        grid-template-rows: 1fr;
+        grid-template-areas: 
+        "tr tr sv bdg bdg del map map"
+    }
+    .trips {
+        grid-area: tr;
+        display: flex;
+        position: relative;
+        height: 50%;
+        border-radius: 10%;
+        margin: 5px;
+        align-items: center;
+        justify-content: center;
+        background-color: #042a2b;
+    }
+    .trippop {
+        overflow: hidden;
+        display: block;
+        position: absolute;
+        bottom: -600%;
+        background-color: #5EB1BF;
+        border-radius: 7px 7px 0px 0px;
+        width: 100%;
+        z-index: -50;
+    }
+    .trippop ul {
+        margin-right: 7%;
+        margin-left: 7%;
+        border-radius: 5px;
+        background-color: #042a2b;
+
+    }
+    .trippop i {
+        margin-left: 10%;
+        float: right;
+        top: 5px;
+        right: 3px;
+        position: relative;
+    }
+    .trippop h4 {
+        color: #CDEDF6;
+        margin-left: 5px;
+
+    }
+    .save {
+        grid-area: sv;
+        display: block;
+        top: 10%;
+        justify-self: center;
+        position: relative;
+    }
+    .savepop {
+        position: absolute;
+        display: none;
+        bottom: 100%;
+    }
+    .savepop input[type="text"] {
+        padding: 5%;
+        font-size: 300%;
+    }
+    .savepop input[type="submit"] {
+        border: none;
+        text-decoration: none;
+        font-size: 300%;
+        width: 110%;
+        background-color: #CDEDF6;
+        font-family: 'Roboto', sans-serif;
+    }
+    .budget {
+        grid-area: bdg;
+        display: flex;
+        position: relative;
+        height: 50%;
+        border-radius: 10%;
+        margin: 5px;
+        align-items: center;
+        justify-content: center;
+        background-color: #042a2b;
+    }
+    .delete {
+        grid-area: del;
+        display: block;
+        top: 10%;
+        justify-self: center;
+        position: relative;
+    }
+    .map {
+        grid-area: map;
+        display: flex;
+        position: relative;
+        height: 50%;
+        border-radius: 10%;
+        margin: 5px;
+        align-items: center;
+        justify-content: center;
+        background-color: #042a2b;
+    }
+    .karta {
+        background-image: url('../img/map.png');
+        background-size: cover;
+        background-position: 80% 100%;
+        width: 100%;
+        height: 100%;
+        z-index: 10;
+        position: fixed;
+        display: none;
     }
 }
 h1 {
@@ -413,6 +556,11 @@ h4 {
     color: #CDEDF6;
     font-size: 4em;
 }
+h5 {
+    font-family: 'Open Sans Condensed', sans-serif;
+    color: #CDEDF6;
+    font-size: 3em;
+}
 p {
     font-family: 'Roboto', sans-serif;
     color: #CDEDF6;
@@ -420,6 +568,18 @@ p {
 }
 a {
     text-decoration: none;
+}
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    margin-top: -20%;
+}
+li {
+    list-style-type: none;
+}
+.inactive {
+    background-color: #2c5f61;
 }
 /*font-family: 'Roboto', sans-serif;
 font-family: 'Raleway', sans-serif;
@@ -453,7 +613,7 @@ font-family: 'Open Sans Condensed', sans-serif;*/
 }
 
 .material-icons.md-dark.md-inactive {
-    color: rgba(0, 0, 0, 0.26);
+    color: #2c5f61;
 }
 
 .material-icons.md-light {

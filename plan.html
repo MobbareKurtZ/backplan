@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Oswald|Raleway|Roboto" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+    <script src="https://cdn.rawgit.com/nnattawat/flip/master/dist/jquery.flip.min.js"></script>
     <script type="text/javascript" src="js/script.js"></script>
     <title>BackPlan</title>
 </head>
@@ -54,19 +55,110 @@
         <!-- MAIN -->
         <main id="main_pl">
             <input class="srcbar" type="text" placeholder="Sök destination...">
+            <div class="karta"></div>
             <div class="list">
                 <div class="list1">
+                    <div class="start">
+                        <div class="front">
+                            <i class="material-icons md-light md-48">near_me</i>
+                        </div>
+                        <div class="back">
+                            <i class="material-icons md-light md-48">delete</i>
+                        </div>
+                    </div>
+                    <i class="material-icons md-light md-24">hotel</i>
+                    <i class="material-icons md-light md-24">restaurant_menu</i>
+                    <br>
+                    <i class="material-icons md-light md-24">home</i>
+                    <i class="material-icons md-light md-24">flight</i>
                     <h2>Iceland</h2>
-                    <h4>explore</h4>
                 </div>
-                <div class="list2"></div>
-                <div class="list3"></div>
+                <div class="list2">
+                    <div class="check">
+                        <div class="front">
+                            <i class="material-icons md-light md-48">location_on</i>
+                        </div>
+                        <div class="back">
+                            <i class="material-icons md-light md-48">delete</i>
+                        </div>
+                    </div>
+                    <i class="material-icons md-light md-24">hotel</i>
+                    <i class="material-icons md-light md-24">restaurant_menu</i>
+                    <br>
+                    <i class="material-icons md-light md-24">terrain</i>
+                    <i class="material-icons md-light md-24">local_hospital</i>
+                    <h2>China</h2>
+                </div>
+                <div class="list3">
+                    <div class="fin">
+                        <div class="front">
+                            <i class="material-icons md-light md-48">flag</i>
+                        </div>
+                        <div class="back">
+                            <i class="material-icons md-light md-48">delete</i>
+                        </div>
+                    </div>
+                    <i class="material-icons md-light md-24">hotel</i>
+                    <i class="material-icons md-light md-24">restaurant_menu</i>
+                    <br>
+                    <i class="material-icons md-light md-24">terrain</i>
+                    <h2>Italy</h2>
+                </div>
                 <div class="list4"></div>
                 <div class="list5"></div>
                 <div class="list6"></div>
                 <div class="list7"></div>
             </div>
-            <footer class="plannav"></footer>
+            <footer class="plannav">
+                <div class="trips">
+                    <div class="trippop">
+                        <li>
+                            <ul>
+                                <h4>hurra
+                                    <i class="material-icons md-light md-18">mode_edit</i>
+                                </h4>
+                            </ul>
+                            <ul>
+                                <h4>nej
+                                    <i class="material-icons md-light md-18">mode_edit</i>
+                                </h4>
+                            </ul>
+                            <ul>
+                                <h4>ull
+                                    <i class="material-icons md-light md-18">mode_edit</i>
+                                </h4>
+                            </ul>
+                            <ul>
+                                <h4>greta
+                                    <i class="material-icons md-light md-18">mode_edit</i>
+                                </h4>
+                            </ul>
+                            <ul>
+                                <h4>shufer
+                                    <i class="material-icons md-light md-18">mode_edit</i>
+                                </h4>
+                            </ul>
+                        </li>
+                    </div>
+                    <h3>Resor</h3>
+                </div>
+                <div class="save">
+                    <form class="savepop">
+                        <input type="text" placeholder="Namn" size="5">
+                        <input type="submit" value="Spara">
+                    </form>
+                    <i class="material-icons saveic md-dark md-36">save</i>
+                </div>
+                <div class="budget">
+                    <h3>Budget</h3>
+                </div>
+                <div class="delete">
+                    <i class="material-icons delic md-dark md-36">delete</i>
+                </div>
+                <div class="map">
+                    <h3>Karta</h3>
+                </div>
+            </footer>
         </main>
 </body>
 

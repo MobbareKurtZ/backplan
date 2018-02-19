@@ -75,31 +75,21 @@ $(document).ready(function() {
     //  MAP TOGGLE
     $('.map').clickToggle(function() {
         $('.karta').css({ 'display': 'block' });
+        $('.map').toggleClass('inactive');
     },
     function() {
         $('.karta').css({ 'display': 'none' });
+        $('.map').toggleClass('inactive');
     });
     //  SLIDESHOW
-    var images=new Array('img/bali.jpeg','img/iceland.jpeg');
-    var nextimage=0;
 
-    doSlideshow();
-
-    function doSlideshow()
-    {
-        if($('.slideshowimage').length!=0)
-        {
-            $('.slideshowimage').fadeOut(500,function(){slideshowFadeIn();$(this).remove()});
-        }
-        else
-        {
-            slideshowFadeIn();
-        }
-    }
-    function slideshowFadeIn()
-    {
-        $('.slideshow').prepend($('<img class="slideshowimage" src="'+images[nextimage++]+'" style="display:none">').fadeIn(500,function(){setTimeout(doSlideshow,20000);}));
-        if(nextimage>=images.length)
-            nextimage=0;
-    };
+    $(function(){
+        $('.fadein img:gt(0)').hide();
+        setInterval(function(){
+          $('.fadein :first-child').fadeOut()
+             .next('img').fadeIn()
+             .end().appendTo('.fadein');
+            }, 
+          3000);
+    });
 });

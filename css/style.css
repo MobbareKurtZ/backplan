@@ -225,7 +225,7 @@
         margin: 10%;
         display: block;
         border-radius: 10px;
-        height: 55%;
+        height: 60%;
         width: 30em;
         display: flex;
         justify-content: center;
@@ -238,7 +238,7 @@
         text-align: center;
         display: block;
         border-radius: 10px;
-        width: 22em;
+        width: 23em;
         height: 100%;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     }
@@ -248,7 +248,7 @@
         text-align: center;
         display: block;
         border-radius: 10px;
-        width: 22em;
+        width: 23em;
         height: 100%;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     }
@@ -426,19 +426,6 @@
         text-align: right;
         display: none;
     }
-    .list-placeholder {
-        background: #DADADA;
-        position: relative;
-    }
-    .list-placeholder:after {
-        content: " ";
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        height: 15px;
-        background-color: #FFF;
-    }
     footer h3 {
         color: #042a2b;
     }
@@ -470,16 +457,15 @@
         overflow: hidden;
         display: block;
         position: absolute;
-        bottom: -600%;
+        bottom: -650%;
         background-color: #042a2b;
         border-radius: 7px 7px 0px 0px;
         width: 100%;
         z-index: -50;
     }
-    .trippop ul {
-        margin-right: 7%;
-        margin-left: 7%;
-        border-radius: 5px;
+    .trippop li {
+        margin-bottom: -25%;
+        margin-top: -25%;
         background-color: #CDEDF6;
 
     }

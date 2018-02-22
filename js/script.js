@@ -53,7 +53,7 @@ $(document).ready(function() {
     },
     function() {
         $('.trippop').animate({
-            bottom: "-600%"
+            bottom: "-650%"
         }, 400);
         $('.trips').toggleClass('inactive');
     });
@@ -95,6 +95,8 @@ $(document).ready(function() {
             }, 
           3000);
     });
-    // SORTABLE
-    $('.list').sortable();
+    //  DEST SEARCH
+    $('.srcbar').click(function(){
+        $('.list .front i').text('add')
+    });
 });

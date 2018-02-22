@@ -72,6 +72,10 @@ $(document).ready(function() {
     function() {
         $('.delic').toggleClass('md-inactive');
     });
+    $(".back").click( function (e) {
+        e.stopPropagation();
+        $(this).parent().parent().hide();
+    });
     //  MAP TOGGLE
     $('.map').clickToggle(function() {
         $('.karta').css({ 'display': 'block' });
@@ -82,7 +86,6 @@ $(document).ready(function() {
         $('.map').toggleClass('inactive');
     });
     //  SLIDESHOW
-
     $(function(){
         $('.fadein img:gt(0)').hide();
         setInterval(function(){
@@ -92,4 +95,6 @@ $(document).ready(function() {
             }, 
           3000);
     });
+    // SORTABLE
+    $('.list').sortable();
 });

@@ -485,6 +485,15 @@ header input[type="submit"] {
         border-radius: 10px;
         height: 60%;
         width: 30em;
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+        display: flex;
+        justify-content: center;
+        justify-self: center;
+>>>>>>> 15fd02656acfa755f7ef94b299d1e64fc34ed229
+>>>>>>> 4c93174033f92d015c48e067cd7afa6e76456782
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     }
     .dbbox {
@@ -720,6 +729,13 @@ header input[type="submit"] {
         position: absolute;
         bottom: -650%;
         background-color: #042a2b;
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+        border-radius: 7px 7px 0px 0px;
+>>>>>>> 15fd02656acfa755f7ef94b299d1e64fc34ed229
+>>>>>>> 4c93174033f92d015c48e067cd7afa6e76456782
         width: 100%;
         z-index: -50;
     }
@@ -847,6 +863,10 @@ header input[type="submit"] {
         right: 5%;
         top: 20%;
     }
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 4c93174033f92d015c48e067cd7afa6e76456782
     /* -----------MAIN DAGBOK----------- */
     #main_mc {
         grid-area: mn;
@@ -874,6 +894,11 @@ header input[type="submit"] {
         background-repeat: no-repeat;
         background-position: 100% 100%;
     }
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 15fd02656acfa755f7ef94b299d1e64fc34ed229
+>>>>>>> 4c93174033f92d015c48e067cd7afa6e76456782
 }
 h1 {
     font-family: 'Raleway', sans-serif;

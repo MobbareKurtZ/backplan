@@ -1,3 +1,259 @@
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    font-size: 45%;
+    position: fixed;
+}
+#wrapper {
+    margin: 0px;
+    position: fixed;
+    display: grid;
+    width: 100%;
+    height: 100%;
+    background-color: #042a2b;
+    overflow: hidden;
+    grid-template-rows: 90px 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-areas: 
+    "nv nv nv nv nv nv nv nv nv nv nv nv"
+    "mn mn mn mn mn mn mn mn mn mn mn mn"
+    "mn mn mn mn mn mn mn mn mn mn mn mn"
+    "mn mn mn mn mn mn mn mn mn mn mn mn"
+    "mn mn mn mn mn mn mn mn mn mn mn mn"
+    "mn mn mn mn mn mn mn mn mn mn mn mn"
+    "mn mn mn mn mn mn mn mn mn mn mn mn"
+    "mn mn mn mn mn mn mn mn mn mn mn mn"
+}
+.fadein {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    z-index: -100;
+}
+.fadein img {
+    position: relative;
+    height: auto;
+    width: 100%;
+    top: -25%;
+    z-index: 10;
+}
+.gradient {
+    background: linear-gradient(to right, rgba(255, 0, 0, 0), rgba(4, 42, 43, 0.692));
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -90;
+    position: fixed;
+}
+
+/* -----------NAVBAR----------- */
+
+#navbar {
+    width: 100%;
+    height: 90px;
+    z-index: 10;
+    grid-area: nv;
+    background-color: #042a2b;
+    display: grid;
+    overflow: hidden;
+    position: fixed;
+    grid-template-rows: 1fr;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-areas:
+    "lg lg lg . . . . . nt1 nt2 nt3 acic"
+}
+.logo {
+    grid-area: lg;
+    margin-left: 10%;
+    display: block;
+    position: relative;
+    top: -7%;
+}
+.navtxts {
+    margin-left: 10px;
+    color: #CDEDF6;
+}
+.navtxt1 {
+    grid-area: nt1;
+    position: relative;
+    top: -7%;
+}
+.navtxt2 {
+    grid-area: nt2;
+    position: relative;
+    top: -7%;
+}
+.navtxt3 {
+    grid-area: nt3;
+    position: relative;
+    top: -7%;
+}
+.d_accic {
+    grid-area: acic;
+    position: relative;
+    top: 23%;
+}
+.navbtns {
+    display: block;
+    background-color: red;
+    position: fixed;
+    right: 5%;
+    top: 90px;
+    width: 200px;
+}
+.navbtn1 {
+    grid-area: nb1;
+    background-color: #5EB1BF;
+    display: block;
+    position: relative;
+    height: 10%;
+    width: 50%;
+    margin: auto;
+    border-radius: 3px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+}
+.navbtn2 {
+    grid-area: nb2;
+    background-color: #5EB1BF;
+    display: block;
+    position: relative;
+    height: 10%;
+    width: 50%;
+    margin: auto;
+    border-radius: 3px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+}
+.navLogin {
+    position: fixed;
+    right: 0;
+}
+header input[type="text"] {
+    font-size: 16px;
+    padding: 6px 10px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    height: 100%;
+    font-family: 'Roboto', sans-serif;
+}
+header input[type="password"] {
+    font-size: 16px;
+    padding: 6px 10px;
+    margin: 3px 0;
+    box-sizing: border-box;
+    height: 100%;
+    font-family: 'Roboto', sans-serif;
+}
+header input[type="submit"] {
+    border: none;
+    text-decoration: none;
+    font-size: 20px;
+    background-color: #CDEDF6;
+    font-family: 'Roboto', sans-serif;
+}
+.m_accic {
+    display: none!important;
+}
+.menuic {
+    display: none!important;
+}
+.logtxt {
+}
+.regtxt {
+}
+
+/* -----------MAIN INDEX----------- */
+
+#main_in {
+    grid-area: mn;
+    display: grid;
+    background-image: url('test.jpg');
+    background-size: cover;
+    height: 100%;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-areas: 
+    ". . . . . . . . . . . ."
+    ". . . . . . . . . . . ."
+    ". . . . . . . . . . . ."
+    "larr . . . . . . . . txts txts rarr"
+    ". . . . . . . . . txts txts ."
+    ". exp exp . . . . . . txts txts ."
+    ". . pb pb . dbb dbb . mb mb . ."
+}
+.larr {
+    grid-area: larr;
+}
+.rarr {
+    grid-area: rarr;
+}
+.planbox {
+    grid-area: pb;
+    background-color: #042a2b;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    justify-self: center;
+    align-items: center;
+    margin: 10%;
+    border-radius: 10px;
+    height: 60%;
+    width: 30em;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.dbbox {
+    grid-area: dbb;
+    background-color: #042a2b;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    justify-self: center;
+    align-items: center;
+    margin: 10%;
+    border-radius: 10px;
+    height: 60%;
+    width: 30em;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.matchbox {
+    grid-area: mb;
+    background-color: #042a2b;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    justify-self: center;
+    align-items: center;
+    margin: 10%;
+    border-radius: 10px;
+    height: 60%;
+    width: 30em;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.texts {
+    grid-area: txts;
+    text-align: right;
+    margin-right: 40px;
+    font-size: 150%;
+}
+.explbtn {
+    grid-area: exp;
+    background-color: #EF7B45;
+    height: 80px;
+    width: 200px;
+    border-radius: 10px;
+    text-align: center;
+    display: flex;
+    justify-content: center
+}
+#expltxt {
+    color: #042a2b;
+    top: -13px;
+    position: relative;
+    font-size: 4.5em;
+}
+
+/* -----------MOBIL----------- */
+
 @media only screen and (max-width: 500px) {
     body {
         width: 100%;
@@ -16,19 +272,15 @@
         overflow: hidden;
         grid-template-rows: 60px 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
         grid-template-columns: repeat(5, 1fr);
-        grid-template-areas: "nv nv nv nv nv" "mn mn mn mn mn" "mn mn mn mn mn" "mn mn mn mn mn" "mn mn mn mn mn" "mn mn mn mn mn" "mn mn mn mn mn" "mn mn mn mn mn"
-    }
-    .bg {
-        background-image: url('https://static.pexels.com/photos/450062/pexels-photo-450062.jpeg');
-        position: fixed;
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        background-position: center 10%;
-        background-size: cover;
-        height: 100%;
-        width: 100%;
-        overflow: hidden;
-        z-index: -100;
+        grid-template-areas: 
+        "nv nv nv nv nv"
+        "mn mn mn mn mn"
+        "mn mn mn mn mn"
+        "mn mn mn mn mn"
+        "mn mn mn mn mn"
+        "mn mn mn mn mn"
+        "mn mn mn mn mn"
+        "mn mn mn mn mn"
     }
     .fadein {
         position: fixed;
@@ -42,7 +294,6 @@
         width: auto;
         z-index: 10;
         right: 100%;
-
     }
     .gradient {
         background: linear-gradient(to right, rgba(255, 0, 0, 0), rgba(4, 42, 43, 0.692));
@@ -76,7 +327,12 @@
         position: fixed;
         grid-template-rows: repeat(5, 1fr);
         grid-template-columns: repeat(5, 1fr);
-        grid-template-areas: "nt1 nt1 nt1 nt1 nt1" "nt2 nt2 nt2 nt2 nt2" "nt3 nt3 nt3 nt3 nt3" "nbts nbts nbts nbts nbts" "navm navm navm navm navm"
+        grid-template-areas:
+        "nt1 nt1 nt1 nt1 nt1"
+        "nt2 nt2 nt2 nt2 nt2"
+        "nt3 nt3 nt3 nt3 nt3"
+        "nbts nbts nbts nbts nbts"
+        "navm navm navm navm navm"
     }
     .navtxts {
         margin-left: 10px;
@@ -136,11 +392,6 @@
         background-color: #CDEDF6;
         font-family: 'Roboto', sans-serif;
     }
-    btntxt {
-        font-family: 'Roboto', sans-serif;
-        color: #383842;
-        margin: auto;
-    }
     .navbtn1 {
         grid-area: nb1;
         background-color: #5EB1BF;
@@ -163,9 +414,12 @@
         border-radius: 3px;
         box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
     }
-    .accic {
+    .m_accic {
         grid-area: acic;
         margin: 0px 20px;
+    }
+    .d_accic {
+        display: none!important;
     }
     .logtxt {
         top: -10px;
@@ -210,7 +464,8 @@
         height: 100%;
         grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
         grid-template-columns: repeat(5, 1fr);
-        grid-template-areas: ". . . . ."
+        grid-template-areas: 
+        ". . . . ."
         ". pb pb pb ."
         ". dbb . mb ."
         ". . . . ."
@@ -222,21 +477,24 @@
         grid-area: pb;
         background-color: #042a2b;
         text-align: center;
-        margin: 10%;
-        display: block;
-        border-radius: 10px;
-        height: 60%;
-        width: 30em;
         display: flex;
         justify-content: center;
         justify-self: center;
+        align-items: center;
+        margin: 10%;
+        border-radius: 10px;
+        height: 60%;
+        width: 30em;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     }
     .dbbox {
         grid-area: dbb;
         background-color: #042a2b;
         text-align: center;
-        display: block;
+        display: flex;
+        justify-content: center;
+        justify-self: center;
+        align-items: center;
         border-radius: 10px;
         width: 23em;
         height: 100%;
@@ -246,7 +504,10 @@
         grid-area: mb;
         background-color: #042a2b;
         text-align: center;
-        display: block;
+        display: flex;
+        justify-content: center;
+        justify-self: center;
+        align-items: center;
         border-radius: 10px;
         width: 23em;
         height: 100%;
@@ -459,7 +720,6 @@
         position: absolute;
         bottom: -650%;
         background-color: #042a2b;
-        border-radius: 7px 7px 0px 0px;
         width: 100%;
         z-index: -50;
     }
@@ -587,6 +847,33 @@
         right: 5%;
         top: 20%;
     }
+    /* -----------MAIN DAGBOK----------- */
+    #main_mc {
+        grid-area: mn;
+        display: grid;
+        background-color: #042a2b;
+        background-image: url('test.jpg');
+        background-size: cover;
+        height: 100%;
+        grid-template-rows: 10% 1fr 1fr 1fr 1fr 1fr 30px;
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-areas: 
+        "scrb scrb scrb scrb scrb"
+        "lst lst lst lst lst"
+        "lst lst lst lst lst"
+        "lst lst lst lst lst"
+        "lst lst lst lst lst"
+        "lst lst lst lst lst"
+        "lst lst lst lst lst"
+    }
+    #main_mc input[placeholder="Sök resa..."] {
+        grid-area: scrb;
+        padding: 10px;
+        font-size: 500%;
+        background-image: url('../img/search.png');
+        background-repeat: no-repeat;
+        background-position: 100% 100%;
+    }
 }
 h1 {
     font-family: 'Raleway', sans-serif;
@@ -702,4 +989,7 @@ font-family: 'Open Sans Condensed', sans-serif;*/
 
 .material-icons.md-48 {
     font-size: 48px;
+}
+.material-icons.md-86 {
+    font-size: 86px;
 }

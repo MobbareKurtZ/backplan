@@ -13,8 +13,20 @@
 }(jQuery));
 
 $(document).ready(function() {
-    $('.navLogin').css({ 'display': 'none' });
-    $('.text2').fadeOut();
+    //$('.navLogin').css({ 'display': 'none' });
+    //  LOGIN ANIMATE
+    $('.d_accic').clickToggle(function() {
+        $('.navbtns').animate({
+            top: "5px"
+        }, 400);
+        $('#navbar > a').fadeOut(300);
+    },
+    function() {
+        $('.navbtns').animate({
+            top: "-70px"
+        }, 400);
+        $('#navbar > a').fadeIn(300);
+    });
     //  NAVBAR
     $('.menuic').clickToggle(function() {
             $('#navbar').animate({

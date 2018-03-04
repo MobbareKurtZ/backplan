@@ -13,7 +13,6 @@
         display: grid;
         width: 100%;
         height: 100%;
-        background-color: #042a2b;
         overflow: hidden;
         grid-template-rows: 90px 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
         grid-template-columns: repeat(12, 1fr);
@@ -26,19 +25,6 @@
         "mn mn mn mn mn mn mn mn mn mn mn mn"
         "mn mn mn mn mn mn mn mn mn mn mn mn"
         "mn mn mn mn mn mn mn mn mn mn mn mn"
-    }
-    .fadein {
-        position: fixed;
-        height: 100%;
-        width: 100%;
-        z-index: -100;
-    }
-    .fadein img {
-        position: relative;
-        height: auto;
-        width: 100%;
-        top: -25%;
-        z-index: 10;
     }
     .gradient {
         background: linear-gradient(to right, rgba(255, 0, 0, 0), rgba(4, 42, 43, 0.692));
@@ -59,6 +45,7 @@
         background-color: #042a2b;
         display: grid;
         overflow: hidden;
+        user-select: none;
         position: fixed;
         grid-template-rows: 1fr;
         grid-template-columns: repeat(12, 1fr);
@@ -99,7 +86,7 @@
         grid-area: acic;
         position: relative;
         left: 25px;
-        top: 23%;
+        top: 14px;
         cursor: pointer;
     }
     .navbtns {
@@ -143,21 +130,23 @@
     }
     .navLogin {
         position: fixed;
-        right: 240px;
-        display: none;
+        right: 200px;
         top: 9px;
+        display: none;
     }
     header input[type="text"] {
         font-size: 20px;
         padding: 15px 10px;
-        margin: 8px 0;
+        margin: 6px 0;
+        height: 60px;
         box-sizing: border-box;
         font-family: 'Roboto', sans-serif;
     }
     header input[type="password"] {
         font-size: 20px;
         padding: 15px 10px;
-        margin: 3px 0;
+        margin: 6px 0;
+        height: 60px;
         box-sizing: border-box;
         font-family: 'Roboto', sans-serif;
     }
@@ -167,9 +156,9 @@
         font-size: 35px;
         background-color: #CDEDF6;
         font-family: 'Roboto', sans-serif;
-        height: 55px;
+        height: 60px;
         width: 150px;
-        top: 5px;
+        top: 6px;
         position: relative;
     }
     .m_accic {
@@ -186,23 +175,28 @@
     #main_in {
         grid-area: mn;
         display: grid;
-        background-image: url('test.jpg');
-        background-size: cover;
         height: 100%;
+        width: 100%;
         grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
         grid-template-columns: repeat(12, 1fr);
         grid-template-areas: 
         ". . . . . . . . . . . ."
-        ". . . . . . . . . . . ."
-        ". . . . . . . . . . . ."
-        "larr . . . . . . . txts txts txts rarr"
         ". . . . . . . . txts txts txts ."
-        ". exp exp . . . . . txts txts txts ."
-        ". . pb pb . dbb dbb . mb mb . ."
+        "larr . pb pb . dbb dbb . mb mb . rarr"
+        ". . . . . . . . . . . ."
+        ". . . . . . . . . . . ."
+        ". exp exp . . . . . . . . ."
+        ". . . . . . . . . . . ."
+    }
+    .bg {
+        height: 100%;
+        min-width: 100%;
+        position: fixed;
     }
     .larr {
         grid-area: larr;
         user-select: none;
+        text-shadow: 0px 0px 10px #042a2b;
     }
     .rarr {
         grid-area: rarr;
@@ -210,6 +204,7 @@
         float: right;
         display: flex;
         justify-self: right;
+        text-shadow: 0px 0px 10px #042a2b;
     }
     .planbox {
         grid-area: pb;
@@ -219,11 +214,18 @@
         justify-content: center;
         justify-self: center;
         align-items: center;
-        margin: 10%;
         border-radius: 10px;
-        height: 60%;
+        height: 80%;
+        user-select: none;
         width: 30em;
+        transition: ease 0.5s transform;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+    .planbox:hover {
+        transform: scale(1.1)
+    }
+    .planbox:active {
+        background-color: #075153;
     }
     .dbbox {
         grid-area: dbb;
@@ -233,11 +235,18 @@
         justify-content: center;
         justify-self: center;
         align-items: center;
-        margin: 10%;
         border-radius: 10px;
-        height: 60%;
+        height: 80%;
+        user-select: none;
         width: 30em;
+        transition: ease 0.5s transform;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+    .dbbox:hover {
+        transform: scale(1.1)
+    }
+    .dbbox:active {
+        background-color: #075153;
     }
     .matchbox {
         grid-area: mb;
@@ -247,33 +256,53 @@
         justify-content: center;
         justify-self: center;
         align-items: center;
-        margin: 10%;
         border-radius: 10px;
-        height: 60%;
+        height: 80%;
+        user-select: none;
         width: 30em;
+        transition: ease 0.5s transform;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+    .matchbox:hover {
+        transform: scale(1.1)
+    }
+    .matchbox:active {
+        background-color: #075153;
     }
     .texts {
         grid-area: txts;
+        user-select: none;
         text-align: right;
         margin-right: 40px;
         font-size: 150%;
     }
+    .texts h4 {
+        position: relative;
+        text-shadow: 0px 0px 10px #042a2b;
+        top: -50px;
+    }
+    .texts h1 {
+        text-shadow: 0px 0px 10px #042a2b;
+    }
     .explbtn {
         grid-area: exp;
+        cursor: pointer;
         background-color: #EF7B45;
         height: 80px;
         width: 200px;
         border-radius: 10px;
         text-align: center;
         display: flex;
-        justify-content: center
+        justify-content: center;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
     }
     #expltxt {
         color: #042a2b;
         top: -13px;
         position: relative;
         font-size: 4.5em;
+        user-select: none;
     }
 
     /* -----------MAIN PLAN----------- */
@@ -281,7 +310,7 @@
     #main_pl {
         grid-area: mn;
         display: grid;
-        background-color: #042a2b;
+        background-image: url('../img/bg.jpeg');
         background-size: cover;
         height: 100%;
         grid-template-rows: 50px 50px 1fr 1fr 1fr 1fr 1fr;
@@ -289,17 +318,17 @@
         grid-template-areas: 
         "trp scrb scrb scrb scrb"
         "trp pnav pnav pnav pnav"
-        "trp lst lst . ."
-        "trp lst lst . ."
-        "trp lst lst . ."
-        "trp lst lst . ."
-        "trp lst lst . ."
+        "trp lst lst bb bb"
+        "trp lst lst bb bb"
+        "trp lst lst bb bb"
+        "trp lst lst bb bb"
+        "trp lst lst bb bb"
     }
     #main_pl input[placeholder="Sök destination..."] {
         grid-area: scrb;
         padding: 10px;
         font-size: 300%;
-        height: 50%;
+        height: 25px;
         background-image: url('../img/search.png');
         background-repeat: no-repeat;
         background-position: 100% 100%;
@@ -307,25 +336,27 @@
     }
     .list {
         display:grid;
+        height: 100%;
         grid-area: lst;
+        margin-top: 5px;
         grid-template-columns: repeat(5, 1fr);
-        grid-template-rows: repeat(7, 1fr);
+        grid-template-rows: repeat(7, 100px);
         grid-template-areas: 
         "l1 l1 l1 l1 l1"
         "l2 l2 l2 l2 l2"
         "l3 l3 l3 l3 l3"
-        "l4 l4 l4 l4 l4"
-        "l5 l5 l5 l5 l5"
-        "l6 l6 l6 l6 l6"
-        "l7 l7 l7 l7 l7"
+        ". . . . ."
+        ". . . . ."
+        ". . . . ."
+        ". . . . ."
     }
-    .list i {
-        margin: 1%;
+    .list div i {
+        margin: 5px;
     }
     #main_pl .list h2 {
         position: absolute;
         right: 20%;
-        top: 0%;
+        top: -10%;
     }
     .start {
         float: left;
@@ -359,9 +390,14 @@
         margin: 0% 0% 0.5% 0%;
         background-repeat: no-repeat;
         background: linear-gradient(to right, rgba(255, 0, 0, 0), rgba(4, 42, 43, 0.925), rgb(4, 42, 43)),
-        url('../img/iceland.jpeg') 40% 40% / 100% ;
+        url('../img/iceland.jpeg') 100% 50% / 120% ;
         width: 100%;
         text-align: right;
+        transition: ease 0.5s all;
+    }
+    .list1:hover {
+        background: linear-gradient(to right, rgba(255, 0, 0, 0), rgba(4, 42, 43, 0.925), rgb(4, 42, 43)),
+        url('../img/iceland.jpeg') 100% 50% / 110% ;
     }
     .list2 {
         grid-area: l2;
@@ -372,6 +408,11 @@
         url('../img/china.jpeg') 100% 50% / 120% ;
         width: 100%;
         text-align: right;
+        transition: ease 0.5s all;
+    }
+    .list2:hover {
+        background: linear-gradient(to right, rgba(255, 0, 0, 0), rgba(4, 42, 43, 0.925), rgb(4, 42, 43)),
+        url('../img/china.jpeg') 100% 50% / 110% ;
     }
     .list3 {
         grid-area: l3;
@@ -379,56 +420,83 @@
         margin: 0.5% 0%;
         background-repeat: no-repeat;
         background: linear-gradient(to right, rgba(255, 0, 0, 0), rgba(4, 42, 43, 0.925), rgb(4, 42, 43)),
-        url('../img/italy.jpeg') 100% 50% / 200% ;
+        url('../img/bali.jpeg') 100% 70% / 120% ;
         width: 100%;
         text-align: right;
+        transition: ease 0.5s all;
     }
-    .list4 {
-        grid-area: l4;
-        position: relative;
-        margin: 0.5% 0%;
-        background-repeat: no-repeat;
-        background: linear-gradient(to right, rgba(255, 0, 0, 0), rgba(4, 42, 43, 0.925), rgb(4, 42, 43));
-        width: 100%;
-        text-align: right;
-        display: none;
+    .list3:hover {
+        background: linear-gradient(to right, rgba(255, 0, 0, 0), rgba(4, 42, 43, 0.925), rgb(4, 42, 43)),
+        url('../img/bali.jpeg') 100% 70% / 110% ;
     }
-    .list5 {
-        grid-area: l5;
-        position: relative;
-        margin: 0.5% 0%;
-        background-repeat: no-repeat;
-        background: linear-gradient(to right, rgba(255, 0, 0, 0), rgba(4, 42, 43, 0.925), rgb(4, 42, 43));
-        width: 100%;
-        text-align: right;
-        display: none;
+    .d_budgetbox {
+        grid-area: bb;
+        height: 100%;
+        display: grid;
+        margin-top: 6px;
+        margin-left: 7px;
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: repeat(7, 100px);
+        grid-template-areas: 
+        "b1 b1 b1 b1 b1"
+        "b2 b2 b2 b2 b2"
+        "b3 b3 b3 b3 b3"
+        ". . . . ."
+        ". . . . ."
+        ". . . . ."
+        ". . . . ."
     }
-    .list6 {
-        grid-area: l6;
-        position: relative;
-        margin: 0.5% 0%;
-        background-repeat: no-repeat;
-        background: linear-gradient(to right, rgba(255, 0, 0, 0), rgba(4, 42, 43, 0.925), rgb(4, 42, 43));
-        width: 100%;
-        text-align: right;
-        display: none;
+    .d_budgetbox .values input {
+        width: 50%;
+        font-size: 25px;
+        border-style: none;
+        border: #042a2b 2px solid;
     }
-    .list7 {
-        grid-area: l7;
-        position: relative;
-        margin: 0.5% 0%;
-        background-repeat: no-repeat;
-        background: linear-gradient(to right, rgba(255, 0, 0, 0), rgba(4, 42, 43, 0.925), rgb(4, 42, 43));
+    .d_budgetbox button {
+        width: auto;
+        border-style: none;
+        font-size: 250%;
+        background-color: #CDEDF6;
+        border: #042a2b 2px solid;
+    }
+    .d_budgetbox > div {
+        padding-bottom: 5px;
+    }
+    .d_budgetbox .values {
+        display: flex;
+        flex-direction: row;
+    }
+    .d_budgetbox div > input {
         width: 100%;
-        text-align: right;
-        display: none;
+        font-size: 33px;
+        text-align: center;
+        border-style: none;
+        border: #042a2b 2px solid;
+    }
+    .d_budgetbox .bdg1 {
+        grid-area: b1;
+        display: flex;
+        flex-direction: column;
+    }
+    .d_budgetbox .bdg2 {
+        grid-area: b2;
+        display: flex;
+        flex-direction: column;
+    }
+    .d_budgetbox .bdg3 {
+        grid-area: b3;
+        display: flex;
+        flex-direction: column;
+    }
+    .m_budgetbox {
+        position: fixed;
+        visibility: hidden;
     }
     footer h3 {
-        color: #042a2b;
+        color: #CDEDF6;
     }
     .plannav {
         grid-area: pnav;
-        background-color: #042a2b;
         width: 100%;
         z-index: 2;
         display: grid;
@@ -449,27 +517,35 @@
         width: 10%;
         height: 100%;
         left: 0px;
-        top: 70px;
+        top: 75px;
     }
     .trippop h3 {
-        margin-bottom: 50%;
-    }
-    .trippop ul {
-        background-color: #CDEDF6;
+        margin-bottom: 30%;
+        margin-left: 10px;
+        font-size: 25px;
+        color: #042a2b;
     }
     .trippop li {
-        background-color: #CDEDF6;
-        height: 100%;
-        margin-bottom: -30%;
+        margin: 1px 0px 1px;
+        height: 45px;
+        transition: ease 0.3s all;
+    }
+    .trippop li:hover {
+        background-color: rgb(186, 213, 221);
+        box-shadow: 0px 0px 8px 2px rgba(0, 0, 0, 0.2), 0px 0px 20px 2px rgba(0, 0, 0, 0.19);
+    }
+    .trippop li:active {
+        background-color: rgb(158, 176, 182)
     }
     .trippop i {
-        margin-left: 10%;
-        top: 5px;
-        right: 3px;
+        margin-right: 5%;
+        margin-top: 5%;
+        float: right;
     }
     .trippop h4 {
         color: #042a2b;
-        margin-left: 5px;
+        margin-left: 5%;
+        user-select: none;
     }
     .save {
         grid-area: sv;
@@ -477,15 +553,25 @@
         justify-self: center;
         justify-content: center;
         position: relative;
-        background-color: #CDEDF6;
+        background-color: #042a2b;
         height: 50px;
         width: 100%;
-        margin-right: 7px;
+        margin-bottom: 5px;
+        left: 0px;
+        transition: background-color .3s ease;
+    }
+    .d_saveic {
+        margin-top: 6px;
+    }
+    .m_saveic {
+        visibility: hidden;
+        position: fixed;
     }
     .savepop {
         position: absolute;
         display: none;
-        bottom: -100%;
+        bottom: -150%;
+        left: 0px;
         width: 150px;
         z-index: 5;
         border: #5EB1BF 3px solid;
@@ -505,47 +591,231 @@
         background-color: #CDEDF6;
         font-family: 'Roboto', sans-serif;
     }
-    .budget {
+    .d_budget {
         grid-area: bdg;
         display: flex;
         position: relative;
         height: 50px;
         align-items: center;
         justify-content: center;
-        background-color: #CDEDF6;
+        background-color: #042a2b;
         margin-left: 7px;
-        margin-left: 7px;
+        user-select: none;
+    }
+    .m_budget {
+        position: fixed;
+        visibility: hidden;
+    }
+    .bdg {
+        position: fixed;
+        visibility: hidden;
     }
     .delete {
+        transition: background-color .3s ease;
         grid-area: del;
         display: flex;
         justify-self: center;
         justify-content: center;
         position: relative;
-        background-color: #CDEDF6;
+        background-color: #042a2b;
         height: 50px;
         width: 100%;
-
+        margin-left: 8px;
+    }
+    .d_delic {
+        margin-top: 6px;
+    }
+    .m_delic {
+        visibility: hidden;
+        position: fixed;
     }
     .map {
+        transition: background-color .3s ease;
         grid-area: map;
         display: flex;
         position: relative;
         height: 50px;
         align-items: center;
         justify-content: center;
-        background-color: #CDEDF6;
-        margin-left: 4px;
+        background-color: #042a2b;
+        margin-left: 9px;
+        user-select: none;
     }
     .karta {
         background-image: url('../img/map.png');
         background-size: cover;
         background-position: 80% 100%;
-        width: 100%;
+        width: 45%;
         height: 100%;
         z-index: 1;
         position: fixed;
         display: none;
+    }
+
+    /* -----------MAIN DAGBOK----------- */
+    #main_dgb {
+        grid-area: mn;
+        display: grid;
+        background-image: url('../img/bg.jpeg');
+        background-size: cover;
+        height: 100%;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-areas: 
+        "lst dlst dlst dlst dlst"
+        "lst . dgb dgb ."
+        "lst . dgb dgb ."
+        "lst . dgb dgb ."
+        "lst . dgb dgb ."
+        "lst . dgb dgb ."
+        "lst . dgb dgb ."
+    }
+    .dgbtext {
+        width: 100%;
+        border-style: none;
+        border: #042a2b 5px solid;
+        border-radius: 20px;
+        padding: 20px;
+        font-size: 20px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+    .dagbok {
+        grid-area: dgb;
+    }
+    .dagbok button {
+        border-style: none;
+        border-radius: 5px;
+        background-color: #042a2b;
+        padding: 5px;
+        transition: all .2s ease-in-out;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+    .dagbok button:hover {
+        transform: scale(1.1);
+    }
+    .dagbok button:active {
+        background-color: #2c5f61;
+        box-shadow: none;
+    }
+    #main_dgb .list {
+        display: flex;
+        flex-direction: column;
+        grid-area: lst;
+        background-color: #CDEDF6;
+        width: 100%;
+        height: 110%;
+        margin-top: -20px;
+    }
+    #main_dgb .list div {
+        margin: 20px 0px;
+        transition: all .2s ease-in-out;
+        cursor: pointer;
+        box-shadow: 0px 0px 8px 2px rgba(0, 0, 0, 0.2), 0px 0px 20px 2px rgba(0, 0, 0, 0.19);
+    }
+    #main_dgb .list div:hover {
+        transform: scale(1.1);
+        box-shadow: 0px 0px 10px 4px rgba(0, 0, 0, 0.2), 0px 0px 40px 10px rgba(0, 0, 0, 0.19);
+    }
+    #main_dgb .list div:active {
+        box-shadow: none;
+    }
+    #main_dgb .list h2 {
+        margin-right: 10px;
+        color: #CDEDF6;
+    }
+    #main_dgb .list > h2 i {
+        position: relative;
+        top: 10px;
+        left: 10px;
+        background-color: #042a2b;
+        border-radius: 5px;
+    }
+    .newpop {
+        position: fixed;
+        display: none;
+        left: 180px;
+        width: 150px;
+        top: 110px;
+        z-index: 5;
+        border: #5EB1BF 3px solid;
+        background-color: white;
+    }
+    .newpop input[type="text"] {
+        padding: 5%;
+        font-size: 300%;
+        width: 130px;
+        border-style: none;
+    }
+    .newpop input[type="submit"] {
+        border: none;
+        text-decoration: none;
+        font-size: 300%;
+        width: 150px;
+        background-color: #CDEDF6;
+        font-family: 'Roboto', sans-serif;
+    }
+    #main_dgb .list > h2 {
+        margin-bottom: 20px;
+        margin-left: 10px;
+        color: #042a2b;
+    }
+    #main_dgb .datelist {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        grid-area: dlst;
+        margin-bottom: 20px;
+    }
+    #main_dgb .dates {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        width: 100%;
+    }
+    #main_dgb .datelist h2 {
+        color: #042a2b;
+        text-align: center;
+    }
+    #main_dgb .datelist h4 {
+        display: block;
+        background-color: #CDEDF6;
+        padding: 7px;
+        transition: all .2s ease-in-out;
+        text-align: center;
+        box-shadow: 0px 3px 5px 1px rgba(0, 0, 0, 0.2), 0px 3px 10px 1px rgba(0, 0, 0, 0.19);
+    }
+    #main_dgb .datelist h4:hover {
+        transform: scale(1.1);
+    }
+    #main_dgb .datelist h4:active {
+        box-shadow: none;
+    }
+    #main_dgb .datelist h4 {
+        color: #042a2b;
+        margin: 0px 10px;
+        user-select: none;
+    }
+    .material-icons.md-18 {
+        font-size: 24px;
+    }
+    
+    .material-icons.md-24 {
+        font-size: 36px;
+    }
+    
+    .material-icons.md-36 {
+        font-size: 42px;
+    }
+    
+    .material-icons.md-42 {
+        font-size: 48px;
+    }
+    
+    .material-icons.md-48 {
+        font-size: 62px;
+    }
+    .material-icons.md-86 {
+        font-size: 86px;
     }
 }
 
@@ -579,20 +849,6 @@
         "mn mn mn mn mn"
         "mn mn mn mn mn"
     }
-    .fadein {
-        position: fixed;
-        height: 100%;
-        width: 100%;
-        right: 0;
-        z-index: -100;
-    }
-    .fadein img {
-        position: relative;
-        height: 100%;
-        width: auto;
-        z-index: 10;
-        left: -60%;
-    }
     .gradient {
         background: linear-gradient(to right, rgba(255, 0, 0, 0), rgba(4, 42, 43, 0.692));
         width: 100%;
@@ -600,6 +856,10 @@
         overflow: hidden;
         z-index: -90;
         position: fixed;
+    }
+    .bluroverlay {
+        transition: background-color 0.5s ease;
+        background-color: #020f0f00;
     }
     .bluroverlayActive {
         background-color: #020f0fdc;
@@ -854,11 +1114,13 @@
     #main_pl {
         grid-area: mn;
         display: grid;
-        background-color: #042a2b;
-        background-image: url('test.jpg');
-        background-size: cover;
+        background-color: #CDEDF6;
+        background-image: url('../img/bg.jpeg');
+        background-repeat: no-repeat;
+        background-position: bottom;
+        background-size: 150%;
         height: 100%;
-        grid-template-rows: 10% 1fr 1fr 1fr 1fr 1fr 30px;
+        grid-template-rows: 50px 1fr 1fr 1fr 1fr 1fr 30px;
         grid-template-columns: repeat(5, 1fr);
         grid-template-areas: 
         "scrb scrb scrb scrb scrb"
@@ -872,24 +1134,25 @@
     #main_pl input[placeholder="Sök destination..."] {
         grid-area: scrb;
         padding: 10px;
+        padding-top: 15px;
         font-size: 500%;
         background-image: url('../img/search.png');
         background-repeat: no-repeat;
-        background-position: 100% 100%;
+        background-position: 100% -200%;
     }
     .list {
         display:grid;
         grid-area: lst;
         grid-template-columns: repeat(5, 1fr);
-        grid-template-rows: repeat(7, 1fr);
+        grid-template-rows: repeat(7, 75px);
         grid-template-areas: 
         "l1 l1 l1 l1 l1"
         "l2 l2 l2 l2 l2"
         "l3 l3 l3 l3 l3"
-        "l4 l4 l4 l4 l4"
-        "l5 l5 l5 l5 l5"
-        "l6 l6 l6 l6 l6"
-        "l7 l7 l7 l7 l7"
+        ". . . . ."
+        ". . . . ."
+        ". . . . ."
+        ". . . . ."
     }
     .list i {
         margin: 1%;
@@ -951,56 +1214,16 @@
         margin: 0.5% 0%;
         background-repeat: no-repeat;
         background: linear-gradient(to right, rgba(255, 0, 0, 0), rgba(4, 42, 43, 0.925), rgb(4, 42, 43)),
-        url('../img/italy.jpeg') 100% 50% / 200% ;
+        url('../img/bali.jpeg') 100% 60% / 200% ;
         width: 100%;
         text-align: right;
-    }
-    .list4 {
-        grid-area: l4;
-        position: relative;
-        margin: 0.5% 0%;
-        background-repeat: no-repeat;
-        background: linear-gradient(to right, rgba(255, 0, 0, 0), rgba(4, 42, 43, 0.925), rgb(4, 42, 43));
-        width: 100%;
-        text-align: right;
-        display: none;
-    }
-    .list5 {
-        grid-area: l5;
-        position: relative;
-        margin: 0.5% 0%;
-        background-repeat: no-repeat;
-        background: linear-gradient(to right, rgba(255, 0, 0, 0), rgba(4, 42, 43, 0.925), rgb(4, 42, 43));
-        width: 100%;
-        text-align: right;
-        display: none;
-    }
-    .list6 {
-        grid-area: l6;
-        position: relative;
-        margin: 0.5% 0%;
-        background-repeat: no-repeat;
-        background: linear-gradient(to right, rgba(255, 0, 0, 0), rgba(4, 42, 43, 0.925), rgb(4, 42, 43));
-        width: 100%;
-        text-align: right;
-        display: none;
-    }
-    .list7 {
-        grid-area: l7;
-        position: relative;
-        margin: 0.5% 0%;
-        background-repeat: no-repeat;
-        background: linear-gradient(to right, rgba(255, 0, 0, 0), rgba(4, 42, 43, 0.925), rgb(4, 42, 43));
-        width: 100%;
-        text-align: right;
-        display: none;
     }
     footer h3 {
         color: #042a2b;
     }
     .plannav {
         grid-area: pnav;
-        background-color: #042a2b;
+        background-color: #CDEDF6;
         width: 100%;
         z-index: 2;
         height: 37px;        
@@ -1021,16 +1244,23 @@
         justify-content: center;
         margin-right: 2%;
         background-color: #CDEDF6;
+        transition: background-color .3s ease;
     }
     .trippop {
         overflow: hidden;
         display: block;
         position: absolute;
         bottom: -650%;
-        background-color: #042a2b;
+        background-color: #CDEDF6;
         border-radius: 7px 7px 0px 0px;
         width: 85px;
+        height: 160px;
         z-index: -50;
+        padding-top: 5px;
+    }
+    .rekresor {
+        visibility: hidden;
+        position: fixed;
     }
     .trippop li {
         margin-bottom: -25%;
@@ -1050,6 +1280,10 @@
         margin-left: 5px;
 
     }
+    .trippop h3 {
+        position: fixed;
+        visibility: hidden;
+    }
     .save {
         grid-area: sv;
         display: flex;
@@ -1059,6 +1293,11 @@
         background-color: #CDEDF6;
         height: 100%;
         width: 100%;
+        transition: background-color .3s ease;
+    }
+    .d_saveic {
+        visibility: hidden;
+        position: fixed;
     }
     .savepop {
         position: absolute;
@@ -1077,7 +1316,7 @@
         background-color: #CDEDF6;
         font-family: 'Roboto', sans-serif;
     }
-    .budget {
+    .m_budget {
         grid-area: bdg;
         display: flex;
         position: relative;
@@ -1087,6 +1326,42 @@
         background-color: #CDEDF6;
         margin-right: 2%;
         margin-left: 2%;
+        transition: background-color .3s ease;
+    }
+    .d_budget {
+        position: fixed;
+        visibility: hidden;
+    }
+    .list .values input {
+        display: block;
+        padding: 10px 0px;
+        font-size: 13px;
+        text-align: center;
+        border-style: none;
+        border: #042a2b 1px solid;
+    }
+    .list button {
+        width: auto;
+        border-style: none;
+        font-size: 11px;
+        background-color: #CDEDF6;
+        border: #042a2b 1px solid;
+    }
+    .list .values {
+        display: flex;
+        flex-direction: row;
+    }
+    .list div > input {
+        width: 100%;
+        font-size: 28px;
+        text-align: center;
+        border-style: none;
+        border: #042a2b 1px solid;
+    }
+    .bdg {
+        position: absolute;
+        top: 0px;
+        display: none;
     }
     .delete {
         grid-area: del;
@@ -1097,7 +1372,11 @@
         background-color: #CDEDF6;
         height: 100%;
         width: 100%;
-
+        transition: background-color .3s ease;
+    }
+    .d_delic {
+        visibility: hidden;
+        position: fixed;
     }
     .map {
         grid-area: map;
@@ -1108,6 +1387,7 @@
         justify-content: center;
         background-color: #CDEDF6;
         margin-left: 2%;
+        transition: background-color .3s ease;
     }
     .karta {
         background-image: url('../img/map.png');
@@ -1156,7 +1436,7 @@
         right: 5%;
         top: 20%;
     }
-    /* -----------MAIN DAGBOK----------- */
+    /* -----------MAIN MATCH----------- */
     #main_mc {
         grid-area: mn;
         display: grid;
@@ -1191,6 +1471,32 @@
         visibility: hidden;
         position: fixed;
     }
+    .material-icons.md-18 {
+        font-size: 18px;
+    }
+    
+    .material-icons.md-24 {
+        font-size: 24px;
+    }
+    
+    .material-icons.md-36 {
+        font-size: 36px;
+    }
+    
+    .material-icons.md-42 {
+        font-size: 42px;
+    }
+    
+    .material-icons.md-48 {
+        font-size: 48px;
+    }
+    
+    .material-icons.md-86 {
+        font-size: 86px;
+    }
+}
+i {
+    user-select: none;
 }
 h1 {
     font-family: 'Raleway', sans-serif;
@@ -1236,6 +1542,7 @@ li {
 }
 .inactive {
     background-color: #2c5f61;
+    transition: background-color .3s ease;
 }
 /*font-family: 'Roboto', sans-serif;
 font-family: 'Raleway', sans-serif;
@@ -1286,28 +1593,4 @@ font-family: 'Open Sans Condensed', sans-serif;*/
 
 .material-icons.md-light.md-inactive {
     color: rgba(255, 255, 255, 0.3);
-}
-
-.material-icons.md-18 {
-    font-size: 18px;
-}
-
-.material-icons.md-24 {
-    font-size: 24px;
-}
-
-.material-icons.md-36 {
-    font-size: 36px;
-}
-
-.material-icons.md-42 {
-    font-size: 42px;
-}
-
-.material-icons.md-48 {
-    font-size: 48px;
-}
-
-.material-icons.md-86 {
-    font-size: 86px;
 }

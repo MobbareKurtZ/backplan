@@ -1,8 +1,10 @@
-(function($) {
-    $.fn.clickToggle = function(func1, func2) {
+//  CLICK TOGGLE
+
+(function ($) {
+    $.fn.clickToggle = function (func1, func2) {
         var funcs = [func1, func2];
         this.data('toggleclicked', 0);
-        this.click(function() {
+        this.click(function () {
             var data = $(this).data();
             var tc = data.toggleclicked;
             $.proxy(funcs[tc], this)();
@@ -12,30 +14,30 @@
     };
 }(jQuery));
 
-$(document).ready(function() {
+$(document).ready(function () {
     //$('.navLogin').css({ 'display': 'none' });
-    //  LOGIN ANIMATE
-    $('.d_accic').clickToggle(function() {
+    //  LOGIN ANIMATE DESKTOP
+    $('.d_accic').clickToggle(function () {
         $('.navbtns').animate({
             top: "5px"
         }, 400);
         $('#navbar > a').fadeOut(300);
     },
-    function() {
-        $('.navbtns').animate({
-            top: "-70px"
-        }, 400);
-        $('#navbar > a').fadeIn(300);
-    });
-    //  NAVBAR
-    $('.menuic').clickToggle(function() {
-            $('#navbar').animate({
-                top: "0px"
+        function () {
+            $('.navbtns').animate({
+                top: "-70px"
             }, 400);
-            $('.menuic').toggleClass('rotate');
-            $('.bluroverlay').toggleClass('bluroverlayActive');
-        },
-        function() {
+            $('#navbar > a').fadeIn(300);
+        });
+    //  NAVBAR
+    $('.menuic').clickToggle(function () {
+        $('#navbar').animate({
+            top: "0px"
+        }, 400);
+        $('.menuic').toggleClass('rotate');
+        $('.bluroverlay').toggleClass('bluroverlayActive');
+    },
+        function () {
             $('#navbar').animate({
                 top: "-270px"
             }, 400);
@@ -43,72 +45,85 @@ $(document).ready(function() {
             $('.bluroverlay').toggleClass('bluroverlayActive');
         });
     //  LOGIN FORM
-    $('.navbtn1').click(function() {
-        $('.navLogin').css({ 'display': 'grid' });
+    $('.navbtn1').click(function () {
+        $('.navLogin').css({ 'display': 'flex' });
         $('.navbtns').css({ 'display': 'none' });
     });
     //  SAVE
-    $('.saveic').clickToggle(function() {
+    $('.save i').clickToggle(function () {
         $('.savepop').css({ 'display': 'block' });
-        $('.saveic').toggleClass('md-inactive');
+        $('.save').toggleClass('inactive');
     },
-    function() {
-        $('.savepop').css({ 'display': 'none' });
-        $('.saveic').toggleClass('md-inactive');
-    });
-    //  TRIPPOP LIST
-    $('.trips').clickToggle(function() {
+        function () {
+            $('.savepop').css({ 'display': 'none' });
+            $('.save').toggleClass('inactive');
+        });
+    //  TRIPPOP LIST MOBILE
+    $('.trips').clickToggle(function () {
         $('.trippop').animate({
-            bottom: "100%"
+            bottom: "0%"
         }, 400);
         $('.trips').toggleClass('inactive');
     },
-    function() {
-        $('.trippop').animate({
-            bottom: "-650%"
-        }, 400);
-        $('.trips').toggleClass('inactive');
-    });
+        function () {
+            $('.trippop').animate({
+                bottom: "-650%"
+            }, 400);
+            $('.trips').toggleClass('inactive');
+        });
     //  DELETE FLIP
-    $('.start').flip({'trigger': 'manual'});
-    $('.check').flip({'trigger': 'manual'});
-    $('.fin').flip({'trigger': 'manual'});
-    $('.delete').click(function(){
+    $('.start').flip({ 'trigger': 'manual' });
+    $('.check').flip({ 'trigger': 'manual' });
+    $('.fin').flip({ 'trigger': 'manual' });
+    $('.delete').click(function () {
         $('.start').flip('toggle');
         $('.check').flip('toggle');
         $('.fin').flip('toggle');
     });
-    $('.delic').clickToggle(function() {
-        $('.delic').toggleClass('md-inactive');
+    $('.delete i').clickToggle(function () {
+        $('.delete').toggleClass('inactive');
     },
-    function() {
-        $('.delic').toggleClass('md-inactive');
-    });
-    $(".back").click( function (e) {
+        function () {
+            $('.delete').toggleClass('inactive');
+        });
+    $(".back").click(function (e) {
         e.stopPropagation();
         $(this).parent().parent().hide();
     });
     //  MAP TOGGLE
-    $('.map').clickToggle(function() {
+    $('.map').clickToggle(function () {
         $('.karta').css({ 'display': 'block' });
         $('.map').toggleClass('inactive');
     },
-    function() {
-        $('.karta').css({ 'display': 'none' });
-        $('.map').toggleClass('inactive');
-    });
-    //  SLIDESHOW
-    $(function(){
-        $('.fadein img:gt(0)').hide();
-        setInterval(function(){
-          $('.fadein :first-child').fadeOut()
-             .next('img').fadeIn()
-             .end().appendTo('.fadein');
-            }, 
-          3000);
-    });
+        function () {
+            $('.karta').css({ 'display': 'none' });
+            $('.map').toggleClass('inactive');
+        });
     //  DEST SEARCH
-    $('.srcbar').click(function(){
+    $('.srcbar').click(function () {
         $('.list .front i').text('add')
+    });
+    //  NEW POP
+    $('#main_dgb .list > h2 i').clickToggle(function () {
+        $('.newpop').css({ 'display': 'block' });
+        $('#main_dgb .list > h2 i').css({ 'background-color': '#2c5f61' });
+    },
+        function () {
+            $('.newpop').css({ 'display': 'none' });
+            $('#main_dgb .list > h2 i').css({ 'background-color': '#042a2b' });
+        });
+    //  BUDGET TOGGLE
+    $('.m_budget').clickToggle(function () {
+        $('.bdg').css({ 'display': 'block' });
+        $('.m_budget').toggleClass('inactive');
+    },
+        function () {
+            $('.bdg').css({ 'display': 'none' });
+            $('.m_budget').toggleClass('inactive');
+        });
+    //  BUDGET TOTAL
+    $(".sumbtn").click(function () {
+        var sum = parseInt($(this).siblings(".num1").val()) + parseInt($(this).siblings(".num2").val()) + parseInt($(this).siblings(".num3").val()) + "kr";
+        $(this).parent('.values').siblings('.sum').val(sum);
     });
 });

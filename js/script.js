@@ -112,6 +112,27 @@ $(document).ready(function () {
             $('.newpop').css({ 'display': 'none' });
             $('#main_dgb .list > h2 i').css({ 'background-color': '#042a2b' });
         });
+    $('#main_dgb .reslist > h2 i').clickToggle(function () {
+        $('.newpop').css({ 'display': 'block' });
+        $('#main_dgb .reslist > h2 i').css({ 'background-color': '#2c5f61' });
+    },
+        function () {
+            $('.newpop').css({ 'display': 'none' });
+            $('#main_dgb .reslist > h2 i').css({ 'background-color': '#042a2b' });
+        });
+    //  RESOR SLIDE UP
+    $('.resclick').clickToggle(function () {
+        $('.resor').animate({
+            bottom: "0px"
+        }, 400);
+        $('.resclick i').toggleClass('rotate180');
+    },
+        function () {
+            $('.resor').animate({
+                bottom: "-260px"
+            }, 400);
+            $('.resclick i').toggleClass('rotate180');
+        });
     //  BUDGET TOGGLE
     $('.m_budget').clickToggle(function () {
         $('.bdg').css({ 'display': 'block' });
@@ -125,5 +146,18 @@ $(document).ready(function () {
     $(".sumbtn").click(function () {
         var sum = parseInt($(this).siblings(".num1").val()) + parseInt($(this).siblings(".num2").val()) + parseInt($(this).siblings(".num3").val()) + "kr";
         $(this).parent('.values').siblings('.sum').val(sum);
+    });
+    //  SELECT PERSONS
+    $('.person').clickToggle(function () {
+        $(this).toggleClass('inactive');
+    },
+        function () {
+            $(this).toggleClass('inactive');
+        });
+    //  CHAT
+    $('.chatsend').on('click', function(){
+        var text = "\n" + "Jag: " + $(this).siblings('.chatwrite').val();
+        $(this).parent('.chatform').siblings('.chat').append(text);
+        $(this).siblings('.chatwrite').val('');
     });
 });

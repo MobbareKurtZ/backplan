@@ -73,26 +73,26 @@ $(document).ready(function () {
         });
     //  DELETE SWITCH
     $('.delete').clickToggle(function () {
-        $(".start i").fadeOut(300, function() {
+        $(".start i").fadeOut(300, function () {
             $(this).text("delete").fadeIn(300);
-          });
-          $(".check i").fadeOut(300, function() {
+        });
+        $(".check i").fadeOut(300, function () {
             $(this).text("delete").fadeIn(300);
-          });
-          $(".fin i").fadeOut(300, function() {
+        });
+        $(".fin i").fadeOut(300, function () {
             $(this).text("delete").fadeIn(300);
-          });
+        });
     },
-        function() {
-            $(".start i").fadeOut(300, function() {
+        function () {
+            $(".start i").fadeOut(300, function () {
                 $(this).text("near_me").fadeIn(300);
-              });
-              $(".check i").fadeOut(300, function() {
+            });
+            $(".check i").fadeOut(300, function () {
                 $(this).text("place").fadeIn(300);
-              });
-              $(".fin i").fadeOut(300, function() {
+            });
+            $(".fin i").fadeOut(300, function () {
                 $(this).text("flag").fadeIn(300);
-              });
+            });
         });
     $('.delete i').clickToggle(function () {
         $('.delete').toggleClass('inactive');
@@ -100,9 +100,11 @@ $(document).ready(function () {
         function () {
             $('.delete').toggleClass('inactive');
         });
-    $(".back2").click(function (e) {
+    $(".list_item").click(function (e) {
         e.stopPropagation();
-        $(this).parent().parent().hide();
+        if ($(this).children('i').text() == "delete") {
+            $(this).parent().hide();
+        }
     });
     //  MAP TOGGLE
     $('.map').clickToggle(function () {
@@ -115,7 +117,7 @@ $(document).ready(function () {
         });
     //  DEST SEARCH
     $('.srcbar').click(function () {
-        $('.rlist .front2 i').text('add')
+        $('.rlist .list_item i').text('add')
     });
     //  NEW POP
     $('#main_dgb .list > h2 i').clickToggle(function () {
@@ -149,11 +151,15 @@ $(document).ready(function () {
         });
     //  BUDGET TOGGLE
     $('.m_budget').clickToggle(function () {
-        $('.bdg').css({ 'display': 'block' });
+        $('.bdg1').css({ 'display': 'block' });
+        $('.bdg2').css({ 'display': 'block' });
+        $('.bdg3').css({ 'display': 'block' });
         $('.m_budget').toggleClass('inactive');
     },
         function () {
-            $('.bdg').css({ 'display': 'none' });
+            $('.bdg1').css({ 'display': 'none' });
+            $('.bdg2').css({ 'display': 'none' });
+            $('.bdg3').css({ 'display': 'none' });
             $('.m_budget').toggleClass('inactive');
         });
     //  BUDGET TOTAL
@@ -164,25 +170,36 @@ $(document).ready(function () {
     //  SELECT PERSONS + CHAT SHOW
     $('.person').clickToggle(function () {
         $(this).toggleClass('inactive');
-        $(this).parent('.persons').parent('.dest').css({'min-height': '440px'}, 400)
+        $(this).parent('.persons').parent('.dest').css({ 'min-height': '440px' }, 400)
     },
         function () {
             $(this).toggleClass('inactive');
-            if ( $('.person').hasClass('inactive') == false ) {
-                $(this).parent('.persons').parent('.dest').css({'min-height': '180px'})
+            if ($(this).siblings('.person').hasClass('inactive') == false) {
+                $(this).parent('.persons').parent('.dest').css({ 'min-height': '175px' });
             }
         });
     //  CHAT
-    $('.chatsend').on('click', function(){
+    $('.chatsend').on('click', function () {
         var text = "\n" + "Jag: " + $(this).siblings('.chatwrite').val();
         $(this).parent('.chatform').siblings('.chat').append(text);
         $(this).siblings('.chatwrite').val('');
     });
     //  BDG FLIP
-    $('.rlist1').flip({ trigger: 'manual', axis: 'x', reverse: 'true'  });
-    $('.rlist2').flip({ trigger: 'manual', axis: 'x', reverse: 'true'  });
-    $('.rlist3').flip({ trigger: 'manual', axis: 'x', reverse: 'true'  });
+    $('.rlist1').flip({ trigger: 'manual', axis: 'x', reverse: 'true' });
+    $('.rlist2').flip({ trigger: 'manual', axis: 'x', reverse: 'true' });
+    $('.rlist3').flip({ trigger: 'manual', axis: 'x', reverse: 'true' });
     $('.d_budget').click(function () {
+        $('.rlist1').flip('toggle');
+        $('.rlist2').flip('toggle');
+        $('.rlist3').flip('toggle');
+    });
+    $('.d_budget').clickToggle(function () {
+        $('.d_budget').toggleClass('inactive');
+    },
+        function () {
+            $('.d_budget').toggleClass('inactive');
+        });
+    $('.m_budget').click(function () {
         $('.rlist1').flip('toggle');
         $('.rlist2').flip('toggle');
         $('.rlist3').flip('toggle');

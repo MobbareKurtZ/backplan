@@ -71,22 +71,36 @@ $(document).ready(function () {
             }, 400);
             $('.trips').toggleClass('inactive');
         });
-    //  DELETE FLIP
-    $('.start').flip({ 'trigger': 'manual' });
-    $('.check').flip({ 'trigger': 'manual' });
-    $('.fin').flip({ 'trigger': 'manual' });
-    $('.delete').click(function () {
-        $('.start').flip('toggle');
-        $('.check').flip('toggle');
-        $('.fin').flip('toggle');
-    });
+    //  DELETE SWITCH
+    $('.delete').clickToggle(function () {
+        $(".start i").fadeOut(300, function() {
+            $(this).text("delete").fadeIn(300);
+          });
+          $(".check i").fadeOut(300, function() {
+            $(this).text("delete").fadeIn(300);
+          });
+          $(".fin i").fadeOut(300, function() {
+            $(this).text("delete").fadeIn(300);
+          });
+    },
+        function() {
+            $(".start i").fadeOut(300, function() {
+                $(this).text("near_me").fadeIn(300);
+              });
+              $(".check i").fadeOut(300, function() {
+                $(this).text("place").fadeIn(300);
+              });
+              $(".fin i").fadeOut(300, function() {
+                $(this).text("flag").fadeIn(300);
+              });
+        });
     $('.delete i').clickToggle(function () {
         $('.delete').toggleClass('inactive');
     },
         function () {
             $('.delete').toggleClass('inactive');
         });
-    $(".back").click(function (e) {
+    $(".back2").click(function (e) {
         e.stopPropagation();
         $(this).parent().parent().hide();
     });
@@ -101,7 +115,7 @@ $(document).ready(function () {
         });
     //  DEST SEARCH
     $('.srcbar').click(function () {
-        $('.list .front i').text('add')
+        $('.rlist .front2 i').text('add')
     });
     //  NEW POP
     $('#main_dgb .list > h2 i').clickToggle(function () {
@@ -147,17 +161,30 @@ $(document).ready(function () {
         var sum = parseInt($(this).siblings(".num1").val()) + parseInt($(this).siblings(".num2").val()) + parseInt($(this).siblings(".num3").val()) + "kr";
         $(this).parent('.values').siblings('.sum').val(sum);
     });
-    //  SELECT PERSONS
+    //  SELECT PERSONS + CHAT SHOW
     $('.person').clickToggle(function () {
         $(this).toggleClass('inactive');
+        $(this).parent('.persons').parent('.dest').css({'min-height': '440px'}, 400)
     },
         function () {
             $(this).toggleClass('inactive');
+            if ( $('.person').hasClass('inactive') == false ) {
+                $(this).parent('.persons').parent('.dest').css({'min-height': '180px'})
+            }
         });
     //  CHAT
     $('.chatsend').on('click', function(){
         var text = "\n" + "Jag: " + $(this).siblings('.chatwrite').val();
         $(this).parent('.chatform').siblings('.chat').append(text);
         $(this).siblings('.chatwrite').val('');
+    });
+    //  BDG FLIP
+    $('.rlist1').flip({ trigger: 'manual', axis: 'x', reverse: 'true'  });
+    $('.rlist2').flip({ trigger: 'manual', axis: 'x', reverse: 'true'  });
+    $('.rlist3').flip({ trigger: 'manual', axis: 'x', reverse: 'true'  });
+    $('.d_budget').click(function () {
+        $('.rlist1').flip('toggle');
+        $('.rlist2').flip('toggle');
+        $('.rlist3').flip('toggle');
     });
 });

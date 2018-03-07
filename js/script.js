@@ -170,13 +170,28 @@ $(document).ready(function () {
     //  SELECT PERSONS + CHAT SHOW
     $('.person').clickToggle(function () {
         $(this).toggleClass('inactive');
-        $(this).parent('.persons').parent('.dest').css({ 'min-height': '440px' }, 400)
+        if ($('.dest').css('height') != '360px') {
+            $(this).parent('.persons').parent('.dest').css({ 'min-height': '440px' }, 400)
+        };
     },
         function () {
             $(this).toggleClass('inactive');
-            if ($(this).siblings('.person').hasClass('inactive') == false) {
-                $(this).parent('.persons').parent('.dest').css({ 'min-height': '175px' });
-            }
+            if ($('.dest').css('height') != '360px') {
+                if ($(this).siblings('.person').hasClass('inactive') == false) {
+                    $(this).parent('.persons').parent('.dest').css({ 'min-height': '175px' });
+                };
+            };
+        });
+    //  DEST VAL 
+    $('.dests h4').clickToggle(function(){
+        console.log($('.dests h4').hasClass('destgrow'));
+        $(this).delay(50).addClass('destgrow');
+    },
+        function () {
+            if ($('.dests h4').hasClass('destgrow') == true) {
+                $('.dests h4').removeClass('destgrow');;
+            };
+            $(this).delay(50).removeClass('destgrow');
         });
     //  CHAT
     $('.chatsend').on('click', function () {

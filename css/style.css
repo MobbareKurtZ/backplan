@@ -53,7 +53,7 @@
         transition: ease 0.5s all;
         background-repeat: no-repeat;
         background: linear-gradient(to right, rgba(255, 0, 0, 0), rgba(4, 42, 43, 0.925), rgb(4, 42, 43)),
-        url('../img/china.jpeg') 100% 50% / 120%;
+        url('../img/china.jpg') 100% 50% / 120%;
     }
     .list3 {
         grid-area: l3;
@@ -64,7 +64,21 @@
         transition: ease 0.5s all;
         background-repeat: no-repeat;
         background: linear-gradient(to right, rgba(255, 0, 0, 0), rgba(4, 42, 43, 0.925), rgb(4, 42, 43)),
-        url('../img/bali.jpeg') 100% 70% / 120% ;
+        url('../img/bali.jpg') 100% 70% / 120% ;
+    }
+    .click {
+        transition: all ease 0.05s;
+    }
+    .click:active {
+        filter: brightness(125%);
+        transition: all ease 0.05s;
+    }
+    .hover {
+        transition: all ease 0.5s;
+    }
+    .hover:hover {
+        transition: all ease 0.4s;
+        transform: scale(1.1)
     }
 
     /* -----------NAVBAR----------- */
@@ -253,12 +267,6 @@
         transition: ease 0.5s transform;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     }
-    .planbox:hover {
-        transform: scale(1.1)
-    }
-    .planbox:active {
-        background-color: #075153;
-    }
     .dbbox {
         grid-area: dbb;
         background-color: #042a2b;
@@ -274,12 +282,6 @@
         transition: ease 0.5s transform;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     }
-    .dbbox:hover {
-        transform: scale(1.1)
-    }
-    .dbbox:active {
-        background-color: #075153;
-    }
     .matchbox {
         grid-area: mb;
         background-color: #042a2b;
@@ -294,12 +296,6 @@
         width: 30em;
         transition: ease 0.5s transform;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    }
-    .matchbox:hover {
-        transform: scale(1.1)
-    }
-    .matchbox:active {
-        background-color: #075153;
     }
     .texts {
         grid-area: txts;
@@ -360,6 +356,7 @@
         grid-area: scrb;
         padding: 10px;
         font-size: 300%;
+        border-radius: 10px;
         height: 25px;
         background-image: url('../img/search.png');
         background-repeat: no-repeat;
@@ -371,7 +368,7 @@
         display: flex;
         position: absolute;
         flex-direction: column;
-        overflow: auto;
+        overflow-y: auto;
         grid-area: rlst;
         background-color: #CDEDF6;
         width: 15%;
@@ -383,6 +380,7 @@
         margin: 20px 0px;
         transition: all .2s ease-in-out;
         cursor: pointer;
+        z-index: 10;
         box-shadow: 0px 0px 8px 2px rgba(0, 0, 0, 0.2), 0px 0px 20px 2px rgba(0, 0, 0, 0.19);
     }
     #main_pl .reslist div:hover {
@@ -479,12 +477,12 @@
         display: block;
         background-repeat: no-repeat;
         background: linear-gradient(to right, rgba(255, 0, 0, 0), rgba(4, 42, 43, 0.925), rgb(4, 42, 43)),
-        url('../img/china.jpeg') 100% 50% / 120%;
+        url('../img/china.jpg') 100% 50% / 120%;
         transition: ease-in-out 0.5s all;
     }
     .rlist2 .front:hover {
         background: linear-gradient(to right, rgba(255, 0, 0, 0), rgba(4, 42, 43, 0.925), rgb(4, 42, 43)),
-        url('../img/china.jpeg') 100% 50% / 110% ;
+        url('../img/china.jpg') 100% 50% / 110% ;
         transition: ease-in-out 0.5s all;
     }
     .rlist3 {
@@ -499,12 +497,12 @@
         display: block;
         background-repeat: no-repeat;
         background: linear-gradient(to right, rgba(255, 0, 0, 0), rgba(4, 42, 43, 0.925), rgb(4, 42, 43)),
-        url('../img/bali.jpeg') 100% 70% / 120% ;
+        url('../img/bali.jpg') 100% 70% / 120% ;
         transition: ease-in-out 0.5s all;
     }
     .rlist3 .front:hover {
         background: linear-gradient(to right, rgba(255, 0, 0, 0), rgba(4, 42, 43, 0.925), rgb(4, 42, 43)),
-        url('../img/bali.jpeg') 100% 70% / 110% ;
+        url('../img/bali.jpg') 100% 70% / 110% ;
         transition: ease-in-out 0.5s all;
     }
     .rlist .values input {
@@ -573,36 +571,9 @@
         visibility: hidden;
         position: fixed;
     }
-    .trippop h3 {
-        margin-bottom: 30%;
-        margin-left: 10px;
-        font-size: 25px;
-        color: #042a2b;
-    }
-    .trippop li {
-        margin: 1px 0px 1px;
-        height: 45px;
-        transition: ease 0.3s all;
-    }
-    .trippop li:hover {
-        background-color: rgb(186, 213, 221);
-        box-shadow: 0px 0px 8px 2px rgba(0, 0, 0, 0.2), 0px 0px 20px 2px rgba(0, 0, 0, 0.19);
-    }
-    .trippop li:active {
-        background-color: rgb(158, 176, 182)
-    }
-    .trippop i {
-        margin-right: 5%;
-        margin-top: 5%;
-        float: right;
-    }
-    .trippop h4 {
-        color: #042a2b;
-        margin-left: 5%;
-        user-select: none;
-    }
     .save {
         grid-area: sv;
+        border-radius: 10px;
         display: flex;
         justify-self: center;
         justify-content: center;
@@ -647,6 +618,7 @@
     }
     .d_budget {
         grid-area: bdg;
+        border-radius: 10px;
         display: flex;
         position: relative;
         height: 50px;
@@ -666,6 +638,7 @@
     }
     .delete {
         transition: background-color .3s ease;
+        border-radius: 10px;
         grid-area: del;
         display: flex;
         justify-self: center;
@@ -685,6 +658,7 @@
     }
     .map {
         transition: background-color .3s ease;
+        border-radius: 10px;
         grid-area: map;
         display: flex;
         position: relative;
@@ -747,13 +721,6 @@
         padding: 5px;
         transition: all .2s ease-in-out;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    }
-    .dagbok button:hover {
-        transform: scale(1.1);
-    }
-    .dagbok button:active {
-        background-color: #2c5f61;
-        box-shadow: none;
     }
     #main_dgb .list {
         display: flex;
@@ -844,9 +811,6 @@
         text-align: center;
         box-shadow: 0px 3px 5px 1px rgba(0, 0, 0, 0.2), 0px 3px 10px 1px rgba(0, 0, 0, 0.19);
     }
-    #main_dgb .datelist h4:hover {
-        transform: scale(1.1);
-    }
     #main_dgb .datelist h4:active {
         box-shadow: none;
     }
@@ -933,6 +897,10 @@
         color: #042a2b;
         margin-top: -20px;
     }
+    .destgrow.click {
+        transform: scale(1.1);
+        background-color: red;
+    }
     .dest {
         background-color: #042a2b;
         border-radius: 20px;
@@ -981,12 +949,19 @@
     }
     .chatwrite {
         width: 50%;
+        padding: 5px 0px;
     }
     .chatsend {
         width: 10%;
         background-color: #CDEDF6;
         border-style: none;
+        padding: 5px 0px;
     }
+    .destlist {
+        position: fixed;
+        visibility: hidden;
+    }
+    
 
 
     .material-icons.md-18 {
@@ -1084,7 +1059,7 @@
         transition: ease 0.5s all;
         background-repeat: no-repeat;
         background: linear-gradient(to right, rgba(255, 0, 0, 0), rgba(4, 42, 43, 0.925), rgb(4, 42, 43)),
-        url('../img/china.jpeg') 100% 50% / 120%;
+        url('../img/china.jpg') 100% 50% / 120%;
     }
     .list3 {
         grid-area: l3;
@@ -1095,7 +1070,7 @@
         transition: ease 0.5s all;
         background-repeat: no-repeat;
         background: linear-gradient(to right, rgba(255, 0, 0, 0), rgba(4, 42, 43, 0.925), rgb(4, 42, 43)),
-        url('../img/bali.jpeg') 100% 70% / 120% ;
+        url('../img/bali.jpg') 100% 70% / 120% ;
     }
     /* -----------NAVBAR----------- */
     #navbar {
@@ -1457,7 +1432,7 @@
         display: block;
         background-repeat: no-repeat;
         background: linear-gradient(to right, rgba(255, 0, 0, 0), rgba(4, 42, 43, 0.925), rgb(4, 42, 43)),
-        url('../img/china.jpeg') 100% 50% / 120%;
+        url('../img/china.jpg') 100% 50% / 120%;
         transition: ease-in-out 0.5s all;
     }
     .rlist3 {
@@ -1472,7 +1447,7 @@
         display: block;
         background-repeat: no-repeat;
         background: linear-gradient(to right, rgba(255, 0, 0, 0), rgba(4, 42, 43, 0.925), rgb(4, 42, 43)),
-        url('../img/bali.jpeg') 100% 70% / 120% ;
+        url('../img/bali.jpg') 100% 70% / 120% ;
         transition: ease-in-out 0.5s all;
     }
     .rlist .values input {
@@ -1801,12 +1776,12 @@
         background-size: cover;
         height: auto;
         min-height: 100%;
-        grid-template-rows: 15% 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 125px 1fr 1fr 1fr 1fr 1fr 1fr;
         grid-template-columns: 30px repeat(3, 1fr) 30px;
         overflow-x: auto;
         white-space: nowrap;
         grid-template-areas: 
-        ". mc mc mc ."
+        ". dl dl dl ."
         ". mc mc mc ."
         ". mc mc mc ."
         ". mc mc mc ."
@@ -1824,24 +1799,23 @@
         flex-direction: column;
         text-align: center;
     }
-    .match > h2 {
-        color: #042a2b;
-    }
-    .match > h4 {
-        color: #042a2b;
-        margin-top: -20px;
-    }
     .dest {
         display: block;
         background-color: #042a2b;
         border-radius: 20px;
         width: 100%;
-        min-height: 180px;
+        min-height: 360px;
+        height: 360px;
         overflow: hidden;
         padding-bottom: 20px;
+        padding-top: 20px;
         white-space: nowrap;
         margin-bottom: 50px;
         transition: all .4s ease;
+    }
+    .dest h3 {
+        position: fixed;
+        visibility: hidden;
     }
     .persons {
         display: flex;
@@ -1850,6 +1824,7 @@
         justify-self: center;
         justify-content: center;
         overflow-x: auto;
+        overflow-y: hidden;
         margin-bottom: 40px;
     }
     .person {
@@ -1857,6 +1832,7 @@
         margin: 0px 30px;
         background-color: #CDEDF6;
         display: flex;
+        height: 70px;
         flex-direction: column;
         -webkit-border-radius: 5px;
         -moz-border-radius: 5px;
@@ -1870,17 +1846,21 @@
     }
     .chat {
         resize: none;
-        width: 60%;
-        height: 200px
+        margin-top: -20px;
+        width: 80%;
+        height: 200px;
+        padding: 7.5px;
     }
     .chatform {
         margin-bottom: 20px
     }
     .chatwrite {
-        width: 50%;
+        width: 60%;
+        padding: 5px;
     }
     .chatsend {
-        width: 10%;
+        width: 20%;
+        padding: 5px;
         background-color: #CDEDF6;
         border-style: none;
     }
@@ -1907,6 +1887,69 @@
     }
     #main_mc .resor h2 {
         margin: 4px 10px;
+    }
+    .destlist {
+        grid-area: dl;
+        display: flex;
+        flex-direction: column;
+        justify-self: center;
+        justify-content: center;
+    }
+    .destlist > h2 {
+        color: #042a2b;
+        text-align: center;
+    }
+    .destlist > h4 {
+        color: #042a2b;
+        margin-top: -20px;
+        text-align: center;
+    }
+    .dests {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        margin-top: -25px;
+        min-height: 40px;
+    }
+    .dests h2 {
+        position: fixed;
+        visibility: hidden;
+    }
+    .dests h4 {
+        display: block;
+        margin-top: -20px;
+        background-color: #CDEDF6;
+        height: 100%;
+        color: #042a2b;
+        margin: 0px 5px;
+        padding: 5px 10px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+    .match > h2 {
+        position: fixed;
+        visibility: hidden;
+    }
+    .match > h4 {
+        position: fixed;
+        visibility: hidden;
+    }
+    .d1 {
+        display: block;
+    }
+    .d2 {
+        display: none;
+    }
+    .d3 {
+        display: none;
+    }
+
+    .click {
+        transition: 0.1s all ease;
+    }
+    .click:active {
+        transition: 0.1s all ease;
+        transform: scale(1.05);
+        filter: brightness(120%);
     }
     i {
         user-select: none;

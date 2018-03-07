@@ -4,8 +4,8 @@ $(function() {
         valign: 'center',
         slides: [
             { src: "img/bg.jpeg" },
-            { src: "img/china.jpeg" },
-            { src: "img/bali.jpeg" }
+            { src: "img/china.jpg" },
+            { src: "img/bali.jpg" }
         ]
     });
 });

@@ -164,8 +164,12 @@ $(document).ready(function () {
         });
     //  BUDGET TOTAL
     $(".sumbtn").click(function () {
-        var sum = parseInt($(this).siblings(".num1").val()) + parseInt($(this).siblings(".num2").val()) + parseInt($(this).siblings(".num3").val()) + "kr";
-        $(this).parent('.values').siblings('.sum').val(sum);
+        var sum = parseInt($(this).siblings(".num1").val()) + parseInt($(this).siblings(".num2").val()) + parseInt($(this).siblings(".num3").val());
+        var max = parseInt($('.max').val());
+        if (sum > max) {
+            $(this).parent('.values').siblings('.sum').toggleClass('sumred');
+        };
+        $(this).parent('.values').siblings('.sum').val(sum + "kr");
     });
     //  SELECT PERSONS + CHAT SHOW
     $('.person').clickToggle(function () {
@@ -203,10 +207,12 @@ $(document).ready(function () {
     $('.rlist1').flip({ trigger: 'manual', axis: 'x', reverse: 'true' });
     $('.rlist2').flip({ trigger: 'manual', axis: 'x', reverse: 'true' });
     $('.rlist3').flip({ trigger: 'manual', axis: 'x', reverse: 'true' });
-    $('.d_budget').click(function () {
+    $('.mxbdg').flip({ trigger: 'manual', axis: 'x', reverse: 'true' });
+    $('.d_budget, .m_budget').click(function () {
         $('.rlist1').flip('toggle');
         $('.rlist2').flip('toggle');
         $('.rlist3').flip('toggle');
+        $('.mxbdg').flip('toggle');
     });
     $('.d_budget').clickToggle(function () {
         $('.d_budget').toggleClass('inactive');
@@ -214,9 +220,6 @@ $(document).ready(function () {
         function () {
             $('.d_budget').toggleClass('inactive');
         });
-    $('.m_budget').click(function () {
-        $('.rlist1').flip('toggle');
-        $('.rlist2').flip('toggle');
-        $('.rlist3').flip('toggle');
-    });
+    //  MAX BUDGET
+        $('')
 });

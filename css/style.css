@@ -421,10 +421,13 @@
         "l1 l1 l1 l1 l1"
         "l2 l2 l2 l2 l2"
         "l3 l3 l3 l3 l3"
+        "mxbdg mxbdg mxbdg mxbdg mxbdg"
         ". . . . ."
         ". . . . ."
         ". . . . ."
-        ". . . . ."
+    }
+    .mxbdg {
+        grid-area: mxbdg;
     }
     .rlist div i {
         margin: 5px;
@@ -681,6 +684,9 @@
         z-index: 1;
         position: absolute;
         display: none;
+    }
+    .sumred {
+        background-color: red;
     }
 
     /* -----------MAIN DAGBOK----------- */
@@ -1355,7 +1361,7 @@
         "l1 l1 l1 l1 l1"
         "l2 l2 l2 l2 l2"
         "l3 l3 l3 l3 l3"
-        ". . . . ."
+        "mxbdg mxbdg mxbdg mxbdg mxbdg"
         ". . . . ."
         ". . . . ."
         ". . . . ."
@@ -1636,6 +1642,12 @@
         z-index: 1;
         position: fixed;
         display: none;
+    }
+    .mxbdg {
+        grid-area: mxbdg;
+    }
+    .sumred {
+        background-color: red;
     }
     /* -----------MAIN DAGBOK----------- */
     #main_dgb {

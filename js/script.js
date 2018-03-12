@@ -14,6 +14,15 @@
     };
 }(jQuery));
 
+//  CHAT SEND 
+(function ($) {
+    $.fn.chatSend = function () {
+        var text = "\n" + "Jag: " + $(this).siblings('.chatwrite').val();
+        $(this).parent('.chatform').siblings('.chat').append(text);
+        $(this).siblings('.chatwrite').val('');
+    };
+})(jQuery);
+
 $(document).ready(function () {
     //$('.navLogin').css({ 'display': 'none' });
     //  LOGIN ANIMATE DESKTOP
@@ -188,7 +197,7 @@ $(document).ready(function () {
             };
         });
     //  DEST VAL 
-    $('.dests h4').clickToggle(function(){
+    $('.dests h4').clickToggle(function () {
         console.log($('.dests h4').hasClass('destgrow'));
         $(this).delay(50).addClass('destgrow');
     },
@@ -199,11 +208,20 @@ $(document).ready(function () {
             $(this).delay(50).removeClass('destgrow');
         });
     //  CHAT
-    $('.chatsend').on('click', function () {
+    /*$('.chatsend').on('click', function () {
         var text = "\n" + "Jag: " + $(this).siblings('.chatwrite').val();
         $(this).parent('.chatform').siblings('.chat').append(text);
         $(this).siblings('.chatwrite').val('');
+    });*/
+    $('.chatsend').click(function () {
+        $('.chatsend').chatSend();
     });
+    $('.chatwrite').keypress(function (e) {
+        if (e.which == 13) {
+            $('.chatsend').chatSend();
+        }
+    });
+
     //  BDG FLIP
     $('.rlist1').flip({ trigger: 'manual', axis: 'x', reverse: 'true' });
     $('.rlist2').flip({ trigger: 'manual', axis: 'x', reverse: 'true' });

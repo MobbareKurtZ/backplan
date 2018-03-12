@@ -146,7 +146,7 @@
         grid-area: nb1;
         display: flex;
         justify-content: center;
-        background-color: #5EB1BF;
+        background-color: #CDEDF6;
         position: relative;
         float: right;
         height: 60px;
@@ -169,6 +169,7 @@
     .logtxt {
         position: relative;
         bottom: 14px;
+        color: #042a2b;
     }
     .regtxt {
         position: relative;

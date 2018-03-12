@@ -166,6 +166,7 @@ $(document).ready(function () {
     $(".sumbtn").click(function () {
         var sum = parseInt($(this).siblings(".num1").val()) + parseInt($(this).siblings(".num2").val()) + parseInt($(this).siblings(".num3").val());
         var max = parseInt($('.max').val());
+        $(this).parent('.values').siblings('.sum').removeClass('sumred');
         if (sum > max) {
             $(this).parent('.values').siblings('.sum').toggleClass('sumred');
         };
@@ -220,6 +221,4 @@ $(document).ready(function () {
         function () {
             $('.d_budget').toggleClass('inactive');
         });
-    //  MAX BUDGET
-        $('')
 });

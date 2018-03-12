@@ -465,7 +465,7 @@
     }
     .rlist1 .front:hover {
         background: linear-gradient(to right, rgba(255, 0, 0, 0), rgba(4, 42, 43, 0.925), rgb(4, 42, 43)),
-        url('../img/iceland.jpeg') 100% 50% / 110% ;
+        url('../img/iceland.jpeg') 100% 50% / 130% ;
         transition: ease-in-out 0.5s all;
     }
     .rlist2 {
@@ -485,7 +485,7 @@
     }
     .rlist2 .front:hover {
         background: linear-gradient(to right, rgba(255, 0, 0, 0), rgba(4, 42, 43, 0.925), rgb(4, 42, 43)),
-        url('../img/china.jpg') 100% 50% / 110% ;
+        url('../img/china.jpg') 100% 50% / 130% ;
         transition: ease-in-out 0.5s all;
     }
     .rlist3 {
@@ -505,7 +505,7 @@
     }
     .rlist3 .front:hover {
         background: linear-gradient(to right, rgba(255, 0, 0, 0), rgba(4, 42, 43, 0.925), rgb(4, 42, 43)),
-        url('../img/bali.jpg') 100% 70% / 110% ;
+        url('../img/bali.jpg') 100% 70% / 130% ;
         transition: ease-in-out 0.5s all;
     }
     .rlist .values input {

@@ -370,6 +370,7 @@
         position: absolute;
         flex-direction: column;
         overflow-y: auto;
+        overflow-x: hidden;
         grid-area: rlst;
         background-color: #CDEDF6;
         width: 15%;

@@ -113,17 +113,19 @@
         grid-area: nt1;
         position: relative;
         top: -5px;
+        text-align: center;
     }
     .navtxt2 {
         grid-area: nt2;
         position: relative;
         top: -5px;
-        right: 1.5%;
+        text-align: center;
     }
     .navtxt3 {
         grid-area: nt3;
         position: relative;
         top: -5px;
+        text-align: center;
     }
     .nvtxtmove {
         top: -70px;
@@ -180,6 +182,7 @@
         right: 200px;
         top: 9px;
         display: none;
+        flex-direction: row;
     }
     header input[type="text"] {
         font-size: 20px;
@@ -200,7 +203,7 @@
     header input[type="submit"] {
         border: none;
         text-decoration: none;
-        font-size: 35px;
+        font-size: 30px;
         background-color: #CDEDF6;
         font-family: 'Roboto', sans-serif;
         height: 60px;
@@ -409,7 +412,8 @@
         color: #042a2b;
     }
     .rlist {
-        display: grid;
+        display: flex;
+        flex-direction: column;
         height: 80%;
         grid-area: lst;
         margin-top: 5px;
@@ -417,16 +421,9 @@
         border-radius: 20px;
         position: relative;
         padding: 20px;
-        grid-template-columns: repeat(5, 1fr);
-        grid-template-rows: repeat(7, 100px);
-        grid-template-areas: 
-        "l1 l1 l1 l1 l1"
-        "l2 l2 l2 l2 l2"
-        "l3 l3 l3 l3 l3"
-        "mxbdg mxbdg mxbdg mxbdg mxbdg"
-        ". . . . ."
-        ". . . . ."
-        ". . . . ."
+    }
+    .search {
+        display: none;
     }
     .mxbdg {
         grid-area: mxbdg;
@@ -452,7 +449,6 @@
         border-radius: 10%;
     }
     .rlist1 {
-        grid-area: l1;
         position: relative;
         margin: 0% 0% 0.5% 0%;
         width: 100%;
@@ -471,7 +467,6 @@
         transition: ease-in-out 0.5s all;
     }
     .rlist2 {
-        grid-area: l2;
         position: relative;
         margin: 0.5% 0%;
         width: 100%;
@@ -491,7 +486,6 @@
         transition: ease-in-out 0.5s all;
     }
     .rlist3 {
-        grid-area: l3;
         position: relative;
         margin: 0.5% 0%;
         width: 100%;
@@ -506,6 +500,44 @@
         transition: ease-in-out 0.5s all;
     }
     .rlist3 .front:hover {
+        background: linear-gradient(to right, rgba(255, 0, 0, 0), rgba(4, 42, 43, 0.925), rgb(4, 42, 43)),
+        url('../img/bali.jpg') 100% 70% / 130% ;
+        transition: ease-in-out 0.5s all;
+    }
+    .rlist4 {
+        position: relative;
+        margin: 0.5% 0%;
+        width: 100%;
+        text-align: right;
+        transition: ease 0.5s all;
+    }
+    .rlist4 .front {
+        display: block;
+        background-repeat: no-repeat;
+        background: linear-gradient(to right, rgba(255, 0, 0, 0), rgba(4, 42, 43, 0.925), rgb(4, 42, 43)),
+        url('../img/iceland.jpeg') 100% 50% / 120%;
+        transition: ease-in-out 0.5s all;
+    }
+    .rlist4 .front:hover {
+        background: linear-gradient(to right, rgba(255, 0, 0, 0), rgba(4, 42, 43, 0.925), rgb(4, 42, 43)),
+        url('../img/iceland.jpeg') 100% 50% / 130% ;
+        transition: ease-in-out 0.5s all;
+    }
+    .rlist5 {
+        position: relative;
+        margin: 0.5% 0%;
+        width: 100%;
+        text-align: right;
+        transition: ease 0.5s all;
+    }
+    .rlist5 .front {
+        display: block;
+        background-repeat: no-repeat;
+        background: linear-gradient(to right, rgba(255, 0, 0, 0), rgba(4, 42, 43, 0.925), rgb(4, 42, 43)),
+        url('../img/bali.jpg') 100% 70% / 120% ;
+        transition: ease-in-out 0.5s all;
+    }
+    .rlist5 .front:hover {
         background: linear-gradient(to right, rgba(255, 0, 0, 0), rgba(4, 42, 43, 0.925), rgb(4, 42, 43)),
         url('../img/bali.jpg') 100% 70% / 130% ;
         transition: ease-in-out 0.5s all;
@@ -535,18 +567,7 @@
         border-style: none;
         border: #042a2b 2px solid;
     }
-    .rlist .bdg1 {
-        grid-area: b1;
-        display: flex;
-        flex-direction: column;
-    }
-    .rlist .bdg2 {
-        grid-area: b2;
-        display: flex;
-        flex-direction: column;
-    }
-    .rlist .bdg3 {
-        grid-area: b3;
+    .rlist .bdg {
         display: flex;
         flex-direction: column;
     }
@@ -682,7 +703,8 @@
         height: 100%;
         box-sizing: border-box;
         border-radius: 20px;
-        height: 100%;
+        top: 0px;
+        left: 0px;
         z-index: 1;
         position: absolute;
         display: none;
@@ -1036,11 +1058,11 @@
     }
     .bluroverlay {
         transition: background-color 0.5s ease;
-        background-color: #020f0f00;
+        background-color: rgba(2, 15, 15, 0);
     }
     .bluroverlayActive {
-        background-color: #020f0fdc;
-        content: “ ”;
+        background-color: rgba(2, 15, 15, 0.863);
+        content: "";
         width: 100%;
         height: 100%;
         overflow: hidden;
@@ -1129,18 +1151,16 @@
     .navLogin {
         background-color: #CDEDF6;
         display: none;
-        width: 100%;
+        flex-direction: row;
+        width: 105%;
         position: relative;
         text-align: center;
         box-sizing: border-box;
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-template-rows: 1fr;
-        grid-template-areas:
-        "usr psw sbmt"
     }
     header input[type="text"] {
         grid-area: usr;
         font-size: 16px;
+        width: auto;
         padding: 6px 10px;
         box-sizing: border-box;
         font-family: 'Roboto', sans-serif;
@@ -1148,6 +1168,7 @@
     header input[type="password"] {
         grid-area: psw;
         font-size: 16px;
+        width: auto;
         padding: 6px 10px;
         box-sizing: border-box;
         font-family: 'Roboto', sans-serif;
@@ -1315,14 +1336,6 @@
         position: relative;
         color: #042a2b;
     }
-    .button {
-        background-color: #5EB1BF;
-        height: 40px;
-        margin: -10px;
-        border-radius: 9px;
-        text-align: center;
-        position: relative;
-    }
     /* -----------MAIN PLAN----------- */
     #main_pl {
         grid-area: mn;
@@ -1354,22 +1367,16 @@
         background-position: 100% -200%;
     }
     .rlist {
-        display: grid;
+        display: flex;
+        flex-direction: column;
         width: 100%;
         grid-area: lst;
-        grid-template-columns: repeat(5, 1fr);
-        grid-template-rows: repeat(7, 75px);
-        grid-template-areas: 
-        "l1 l1 l1 l1 l1"
-        "l2 l2 l2 l2 l2"
-        "l3 l3 l3 l3 l3"
-        "mxbdg mxbdg mxbdg mxbdg mxbdg"
-        ". . . . ."
-        ". . . . ."
-        ". . . . ."
     }
     .rlist i {
         margin: 1%;
+    }
+    .search {
+        display: none;
     }
     #main_pl .list h2 {
         position: absolute;
@@ -1464,6 +1471,44 @@
         font-size: 18px;
         border-style: none;
         border: #042a2b 2px solid;
+    }
+    .rlist4 {
+        position: relative;
+        margin: 0.5% 0%;
+        width: 100%;
+        text-align: right;
+        transition: ease 0.5s all;
+    }
+    .rlist4 .front {
+        display: block;
+        background-repeat: no-repeat;
+        background: linear-gradient(to right, rgba(255, 0, 0, 0), rgba(4, 42, 43, 0.925), rgb(4, 42, 43)),
+        url('../img/iceland.jpeg') 100% 50% / 120%;
+        transition: ease-in-out 0.5s all;
+    }
+    .rlist4 .front:hover {
+        background: linear-gradient(to right, rgba(255, 0, 0, 0), rgba(4, 42, 43, 0.925), rgb(4, 42, 43)),
+        url('../img/iceland.jpeg') 100% 50% / 130% ;
+        transition: ease-in-out 0.5s all;
+    }
+    .rlist5 {
+        position: relative;
+        margin: 0.5% 0%;
+        width: 100%;
+        text-align: right;
+        transition: ease 0.5s all;
+    }
+    .rlist5 .front {
+        display: block;
+        background-repeat: no-repeat;
+        background: linear-gradient(to right, rgba(255, 0, 0, 0), rgba(4, 42, 43, 0.925), rgb(4, 42, 43)),
+        url('../img/bali.jpg') 100% 70% / 120% ;
+        transition: ease-in-out 0.5s all;
+    }
+    .rlist5 .front:hover {
+        background: linear-gradient(to right, rgba(255, 0, 0, 0), rgba(4, 42, 43, 0.925), rgb(4, 42, 43)),
+        url('../img/bali.jpg') 100% 70% / 130% ;
+        transition: ease-in-out 0.5s all;
     }
     footer h3 {
         color: #042a2b;
